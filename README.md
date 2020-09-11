@@ -1,24 +1,29 @@
-# README
+today: 30/07
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+----list
+cafe4, visited: 17/03, skip_on: null
+cafe3, visited: 29/05, skip_on: null
+cafe1, visited: 30/06, skip_on: null 
+cafe0, visited: 30/06, skip_on: null
+----list
+action: skip!
 
-Things you may want to cover:
+----list
+cafe3, visited: 29/05, skip_on: null
+cafe1, visited: 30/06, skip_on: null
+cafe0, visited: 30/06, skip_on: null
+----list
+----out
+cafe4, visited: 17/03, skip_on: 30/07
+----out
+action: visit!
 
-* Ruby version
+today: 31/07
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+----list
+cafe4, visited: 17/03, skip_on: 30/07
+cafe0, visited: 30/06, skip_on: null
+cafe1, visited: 30/06, skip_on: null
+cafe3, visited: 30/07, skip_on: null
+----list
+action: visit!
