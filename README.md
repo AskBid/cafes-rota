@@ -1,8 +1,14 @@
 
 User sign up
 User logs in
-	- User picks/unpicks Cafes from cafes/index
-	- User create a Cafe in cafe/new
+	- cafes/index
+		links to:
+			- cafes/id      (shows links,images and public notes)
+			- cafes/id/edit (if you are a user)
+			- cafes/new     (if you are a user)
+	- user/id/cafes
+		- user/id/cafes/id (also shows user's cafe notes)
+			- user/id/cafes/id/edit
 	- User can edit a Cafe by adding images or links
 	- User can see its list of Cafes in user/:id/cafes
 	- User can make notes of a Cafe in user/:id/cafe/:id
