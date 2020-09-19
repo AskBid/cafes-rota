@@ -1,17 +1,36 @@
 
-User sign up
-User logs in
-	- cafes/index
-		links to:
-			- cafes/id      (shows links,images and public notes)
-			- cafes/id/edit (if you are a user)
-			- cafes/new     (if you are a user)
-	- user/id/cafes
-		- user/id/cafes/id (also shows user's cafe notes)
-			- user/id/cafes/id/edit
-	- User can edit a Cafe by adding images or links
-	- User can see its list of Cafes in user/:id/cafes
-	- User can make notes of a Cafe in user/:id/cafe/:id
+- User sign up
+- User logs in
+
+	- get: /cafes/
+
+			- get: /cafes/:id, cafes#show           
+				(shows links,images and public notes)
+
+			- get: cafes/:id/edit, cafes#edit          
+
+			- get: /cafes/new, cafes#new            
+
+    
+	- get: /users/:id/cafes               
+		(shows user list of fav cafes, in last visit order)
+
+		- get: /users/:id/cafes/id, cafes#show       
+
+			- get: /users/:id/cafes/:id/edit, cafes#edit
+
+	- get: /users/:id/edit
+		(form: whows list of all cafes to pick from)
+
+
+	- post: /goings, goings#create
+
+
+
+- User can edit a Cafe by adding images or links
+- User can see its list of Cafes in /user/:id/cafes
+- User can make notes of a Cafe in /user/:id/cafe/:id
+
 
 
 
