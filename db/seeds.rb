@@ -23,6 +23,12 @@ cafe3 = Cafe.new(name: 'TAB X TAB', location_url: 'https://g.page/TABxTABLondon?
 cafe3.links.build(name: 'own', url: 'https://tabxtab.com/')
 cafe3.images.build(name: 'wecoffe', url: 'https://lh5.googleusercontent.com/p/AF1QipO6EJM1syb9UgFtWhsjdNADOkp_AtWiQHzXgwFT=s870-k-no§')
 
+cafe3 = Cafe.new(name: 'The Ambrose Cafe', location_url: 'https://goo.gl/maps/hBtBttkW2TYn2gWW7')
+cafe3.links.build(name: 'own', url: 'https://www.heals.com/heals-cafe')
+cafe3.images.build(name: 'google', url: 'https://lh5.googleusercontent.com/p/AF1QipOmJQdvMR-qLY6TKzaT341S5SiCn6WTIF5bloYd=s720-k-no')
+cafe3.images.build(name: 'google', url: 'https://lh5.googleusercontent.com/p/AF1QipPgJWwXuZOJO32Dxwj7IC1XKhnVk9mZ6XuebW1W=s720-k-no')
+
+cafe3.save
 
 u1.cafes << [cafe2, cafe1]
 
