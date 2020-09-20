@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		render text: '<h1>User Show</h1>'
+		render html: 'User Show'
 	end
 
 	private
