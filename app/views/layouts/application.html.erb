@@ -4,11 +4,26 @@
     <title>CafesRota</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "application" %>
 
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class='nav'>
+        <a href="/">Home</a>
+      </div>
+      <div class='nav'>
+        <a href="/signup">SignUp</a>
+      </div>
+    </header>
+
+    <section>
+      <%= yield %>
+    </section>
+
+    <footer>
+      <p align='center' style='font-size: 10px'>Cafes Rota &#169;</p>
+    </footer>
   </body>
 </html>
