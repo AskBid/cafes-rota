@@ -14,12 +14,13 @@
         <div>
           <a href="/">Home</a>
         </div>
-        <div>
-          <a href="/signup">SignUp</a>
-        </div>
         <% if user_is_authenticated %>
-          <div id='logout'>
+          <div id='log'>
             <%= link_to 'Logout', logout_path, :method => 'delete' %>
+          </div>
+        <% else %>
+          <div id='log'>
+            <%= link_to 'Login', login_path%> / <%= link_to 'Signup', signup_path%>
           </div>
         <% end %>
       </div>

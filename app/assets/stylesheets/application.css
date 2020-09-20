@@ -16,7 +16,7 @@
 
 .navwrap {
 	display: flex;
-  background: #80ced6;
+  background: #88A8BF;
   width: 100%;
   justify-content: space-between;
 }
@@ -25,13 +25,13 @@
 	padding: 5px;
 }
 
-.navwrap div#logout {
+.navwrap div#log {
   margin-left: auto;
 }
 
 header {
 	padding: 10px;
-	background-color: #80ced6;
+	background-color: #88A8BF;
 }
 
 body {

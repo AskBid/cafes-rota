@@ -3,4 +3,7 @@ class SessionsController < ApplicationController
 		session.clear
 		redirect_to '/'
 	end
+
+	def new
+	end
 end
