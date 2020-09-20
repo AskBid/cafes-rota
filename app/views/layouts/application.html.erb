@@ -10,11 +10,18 @@
 
   <body>
     <header>
-      <div class='nav'>
-        <a href="/">Home</a>
-      </div>
-      <div class='nav'>
-        <a href="/signup">SignUp</a>
+      <div class="navwrap">
+        <div>
+          <a href="/">Home</a>
+        </div>
+        <div>
+          <a href="/signup">SignUp</a>
+        </div>
+        <% #if user logged in %>
+          <div id='logout'>
+            <a href="/logout">Log out</a>
+          </div>
+        <% #end %>
       </div>
     </header>
 

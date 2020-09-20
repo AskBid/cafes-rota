@@ -14,13 +14,24 @@
  *= require_self
  */
 
-.nav {
-	background-color: #80ced6;
-	padding: 10px;
+.navwrap {
+	display: flex;
+  background: #80ced6;
+  width: 100%;
+  justify-content: space-between;
 }
 
-div.nav {
-	display: inline;
+.navwrap div {
+	padding: 5px;
+}
+
+.navwrap div#logout {
+  margin-left: auto;
+}
+
+header {
+	padding: 10px;
+	background-color: #80ced6;
 }
 
 body {
