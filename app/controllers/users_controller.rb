@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 			redirect_to user_path(user)
 		else
 			# binding.pry
+			flash[:alert] = user.errors.messages.map {|k, m| m}
 			redirect_to new_user_path
 		end 
 	end
