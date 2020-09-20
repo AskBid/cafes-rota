@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+	root 'application#home'
+
+	get '/signup', to: 'users#new'
+	post '/signup', to: 'users#create'
+
   resources :cafes
   resources :notes
   resources :users
