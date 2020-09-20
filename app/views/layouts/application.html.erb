@@ -3,9 +3,9 @@
   <head>
     <title>CafesRota</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application" %>
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -17,11 +17,11 @@
         <div>
           <a href="/signup">SignUp</a>
         </div>
-        <% #if user logged in %>
+        <% if user_is_authenticated %>
           <div id='logout'>
-            <a href="/logout">Log out</a>
+            <%= link_to 'Logout', logout_path, :method => 'delete' %>
           </div>
-        <% #end %>
+        <% end %>
       </div>
     </header>
 
