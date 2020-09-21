@@ -27,6 +27,7 @@ a:hover {
 a:visited - a link the user has visited
 a:hover - a link when the user mouses over it
 a:active*/
+/*https://images.wallpaperscraft.com/image/laptop_cup_glasses_plant_114948_1920x1080.jpg*/
 
 .navwrap {
 	display: flex;
@@ -44,18 +45,30 @@ a:active*/
   margin-left: auto;
 }
 
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Helvetica;
+	display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header {
 	padding: 10px;
 	background-color: #88A8BF;
 }
 
-body {
-	margin: 0px;
-	padding: 0px;
-	font-family: Helvetica;
-}
 
 section {
 	margin: 30px;
-	height: 100%;
+/*	overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;*/
+  flex: 1;
 }
+
+footer {
+}
+
+
+
