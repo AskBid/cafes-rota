@@ -14,9 +14,24 @@
  *= require_self
  */
 
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: #fae7d2;
+}
+
+/*a:link - a normal, unvisited link
+a:visited - a link the user has visited
+a:hover - a link when the user mouses over it
+a:active*/
+
 .navwrap {
 	display: flex;
-  background: #88A8BF;
+	/*background: BF9E87*/
+  background: #88A8BF; 
   width: 100%;
   justify-content: space-between;
 }
