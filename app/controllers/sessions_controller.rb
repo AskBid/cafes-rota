@@ -4,9 +4,7 @@ class SessionsController < ApplicationController
 		redirect_to '/'
 	end
 
-	def new
-		@user = User.new
-	end
+	#new happens automagically
 
 	def create
 		binding.pry
