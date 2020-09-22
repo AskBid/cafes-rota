@@ -81,5 +81,9 @@ section {
 footer {
 }
 
+li.flash {
+	color: red;
+	font-size: 10px;
+}
 
 

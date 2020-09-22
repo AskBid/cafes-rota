@@ -2,9 +2,11 @@
 
 <br>
 <% if flash.alert %>
-  <% flash.alert.each do |message| %>
-    <p class='flash'><%= message.to_s %> </p>
-  <% end %>
+	<ul>
+	  <% flash.alert.each do |message| %>
+	    <li class='flash'><%= message.first.to_s %></li>
+	  <% end %>
+	</ul>
 <% end %>
 
 <%= form_for(@user, url: '/signup') do |f| %>
