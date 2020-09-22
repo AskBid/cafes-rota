@@ -53,9 +53,11 @@ body {
 	display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
 
-  background:url('https://images.wallpaperscraft.com/image/laptop_cup_glasses_plant_114948_1920x1080.jpg');
-  background-size:     cover;                      /* <------ */
+body.home {
+	background:url('https://images.wallpaperscraft.com/image/laptop_cup_glasses_plant_114948_1920x1080.jpg');
+  background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center;
 }
