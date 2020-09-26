@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		render html: 'User Show'
 	end
 
 	private

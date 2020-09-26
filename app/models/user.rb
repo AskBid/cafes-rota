@@ -22,4 +22,13 @@ class User < ApplicationRecord
 			u.password = SecureRandom.hex(15)
 		end
 	end
+
+	def slug
+		self.username.gsub(' ', '-')
+	end
+
+	def self.find_by_slug(slug)
+  	slug = slug.gsub('-', ' ')
+  	self.find_by(username: slug)
+  end
 end
