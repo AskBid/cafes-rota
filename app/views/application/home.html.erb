@@ -4,5 +4,11 @@
 
 <p><b>Cafe Rota</b> helps you scatter over time the visits to your favourites cafes - so that the owners are less likely to ask you to pay rent :P </p>
 <br>
-<u><%= link_to "Let's choose today's cafe!", login_path %></u> <!-- logic to choose between login / singup or user/id/cafes link -->
+<u>
+	<% if user_is_authenticated %>
+		<%= link_to "Let's choose today's cafe!", user_path(current_user.slug) %>
+	<% else %>
+		<%= link_to "Let's choose today's cafe!", login_path %>
+	<% end %>
+</u> <!-- logic to choose between login / singup or user/id/cafes link -->
 </text>
