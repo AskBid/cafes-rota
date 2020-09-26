@@ -13,7 +13,7 @@ class User < ApplicationRecord
 		length: {minimum: 2,
 		message: 'Your password must contain at least 2 characters'
 	}
-	validates :name, presence: { message: "%{attribute} must be a number" }
+	validates :name, presence: { message: "%{attribute} must be given" }
 
 	def self.from_omniauth(response)
 		User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|

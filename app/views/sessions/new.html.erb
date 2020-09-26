@@ -1,5 +1,13 @@
 <h1>Login</h1>
 
+<% if flash.any? %>
+	<ul>
+	  <% flash.alert.each do |message| %>
+	    <li class='flash'><%= message.first.to_s %></li>
+	  <% end %>
+	</ul>
+<% end %>
+
 <%= form_for(:user) do |f| %>
 
 	<%= f.label :name %>

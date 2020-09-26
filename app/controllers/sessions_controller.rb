@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to user
 		else
-			flash[:message] = 'You need to Signup or perhaps you entered wrong credentials? Try again!'
+			flash[:alert] = [['You need to Signup or perhaps you entered wrong credentials? Try again!']]
 			redirect_to login_path
 		end
 	end
@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to user
 		else
+			flash[:alert] = user.errors.messages.map {|k, m| m}
 			redirect_to login_path
 		end
 	end
