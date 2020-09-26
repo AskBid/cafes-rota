@@ -28,6 +28,11 @@ a:hover {
 	color: #fae7d2;
 }
 
+label {
+	display: inline-block;
+	width: 80px;
+}
+
 /*a:link - a normal, unvisited link
 a:visited - a link the user has visited
 a:hover - a link when the user mouses over it
