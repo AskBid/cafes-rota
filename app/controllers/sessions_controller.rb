@@ -16,4 +16,14 @@ class SessionsController < ApplicationController
 			redirect_to login_path
 		end
 	end
+
+	def omniauth
+		user = nil #User method to go here
+		if user.save
+			session[:uder_id] = user.id
+			redirect_to user
+		else
+			redirect_to singup
+		end
+	end
 end
