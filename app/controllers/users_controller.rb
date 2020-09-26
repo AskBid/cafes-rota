@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		binding.pry
+		@user = User.find_by_slug(params[:slug])
 	end
 
 	private

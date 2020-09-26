@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 		user = User.find_by(name: session_params[:name]) || User.find_by(email: session_params[:email])
 		if user && user.authenticate(session_params[:password])
 			session[:user_id] = user.id
-			redirect_to user
+			redirect_to user_path(user.slug)
 		else
 			flash[:alert] = [['You need to Signup or perhaps you entered wrong credentials? Try again!']]
 			redirect_to login_path
@@ -19,10 +19,9 @@ class SessionsController < ApplicationController
 
 	def omniauth
 		user = User.from_omniauth(auth)
-		binding.pry #User method to go here
 		if user.valid?
 			session[:user_id] = user.id
-			redirect_to user
+			redirect_to user_path(user.slug)
 		else
 			flash[:alert] = user.errors.messages.map {|k, m| m}
 			redirect_to login_path

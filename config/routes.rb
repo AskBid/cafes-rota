@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 	delete '/logout', to: 'sessions#destroy'
 
 
-  resources :cafes
+  resources :cafes, param: :slug
   resources :notes
-  resources :users
+  resources :users, param: :slug
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
