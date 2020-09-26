@@ -11,8 +11,8 @@ class User < ApplicationRecord
   validates :password, presence: {
   	message: 'You must enter a password'},
 		length: {minimum: 2,
-		message: 'Your password must contain at least 2 characters'
-	}
+			message: 'Your password must contain at least 2 characters'
+		}, on: create
 	validates :name, presence: { message: "%{attribute} must be given" }
 
 	def self.from_omniauth(response)
