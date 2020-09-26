@@ -18,13 +18,20 @@ class SessionsController < ApplicationController
 	end
 
 	def omniauth
-		user = nil #User method to go here
-		if user.save
+		user = User.from_omniauth(auth)
+		binding.pry #User method to go here
+		if user.valid?
 			session[:uder_id] = user.id
 			redirect_to user
 		else
-			redirect_to singup_path
+			redirect_to login_path
 		end
 	end
+
+	private
+ 
+  def auth
+    request.env['omniauth.auth']
+  end
 
 end
