@@ -7,8 +7,9 @@ class SessionsController < ApplicationController
 	#new happens automagically
 
 	def create
-		user = User.find_by(name: params[:user][:name]) || User.find_by(email: params[:user][:email])
-		if user && user.authenticate(params[:user][:password])
+		binding.pry
+		user = User.find_by(name: session_params[:name]) || User.find_by(email: session_params[:email])
+		if user && user.authenticate(session_params[:password])
 			session[:user_id] = user.id
 			redirect_to user
 		else
@@ -29,6 +30,10 @@ class SessionsController < ApplicationController
 	end
 
 	private
+
+	def session_params
+		params.require(:user).permit(:name, :email, :password)
+	end
  
   def auth
     request.env['omniauth.auth']
