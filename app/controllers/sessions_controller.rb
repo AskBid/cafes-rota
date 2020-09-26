@@ -23,7 +23,8 @@ class SessionsController < ApplicationController
 			session[:uder_id] = user.id
 			redirect_to user
 		else
-			redirect_to singup
+			redirect_to singup_path
 		end
 	end
+
 end
