@@ -34,17 +34,52 @@ label {
 }
 
 img {
-    float: left;
-    width:  100px;
-    height: 100px;
-    object-fit: cover;
+  width:  180px;
+  height: 150px;
+  object-fit: cover;
+  border: solid;
+  border-width: 1px;
+  border-radius: 10px;
 }
 
-/*a:link - a normal, unvisited link
-a:visited - a link the user has visited
-a:hover - a link when the user mouses over it
-a:active*/
-/*https://images.wallpaperscraft.com/image/laptop_cup_glasses_plant_114948_1920x1080.jpg*/
+
+.cafestable {
+	display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.cafetile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  margin: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  background-color: #f5efe9;
+}
+
+.cafeid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  margin: 0px auto;
+  height: 100%;
+  vertical-align: middle;
+}
+
+text.location {
+	color: grey;
+}
+
+
+/*.cafestable {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}*/
 
 .navwrap {
 	display: flex;

@@ -1,4 +1,16 @@
-<% @cafes.each do |c| %>
-	<%= image_tag(c.main_image.url, :alt => c.main_image.name) %>
-	<p><%= c.name %></p>
-<% end %>
+
+<h1>All Cafes</h1>
+
+<div class='cafestable'>
+	<% @cafes.each do |c| %>
+		<%= link_to cafe_path(c) do %>
+			<div class='cafetile'>
+				<%= image_tag(c.main_image.url, :alt => c.main_image.name) %>
+				<div class='cafeid'>
+					<h3><%= c.name %></h3>
+					<text class=location><%= c.location %></text>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
