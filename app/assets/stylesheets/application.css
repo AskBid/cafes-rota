@@ -19,12 +19,27 @@ a {
 	color: white;
 }
 
-a.black {
+section u a {
 	text-decoration: underline;
+	color: white;
+}
+
+section a {
+	text-decoration: none;
 	color: black;
 }
 
+
+section a:hover {
+	color: orange;
+}
+
 a:hover {
+	color: #fae7d2;
+}
+
+section u a:hover {
+	text-decoration: underline;
 	color: #fae7d2;
 }
 
