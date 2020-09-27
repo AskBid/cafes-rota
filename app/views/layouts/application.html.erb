@@ -9,7 +9,9 @@
   </head>
 
   <body <%= "class=home" if action_name == 'home' %>>
+    
     <header>
+
       <div class="navwrap">
         <div>
           <a href="/">| Home |</a>
@@ -19,10 +21,10 @@
         </div>
         <% if user_is_authenticated %>
           <div>
-            <%= link_to '| Your-Cafes |', root_path %>
+            <%= link_to '| Visits |', root_path %>
           </div>
           <div>
-            <%= link_to '| Your-Profile |', user_path(current_user.slug) %>
+            <%= link_to '| Profile |', user_path(current_user.slug) %>
           </div>
           <div id='log'>
             <%= link_to 'Logout', logout_path, :method => 'delete' %>
@@ -33,6 +35,7 @@
           </div>
         <% end %>
       </div>
+
     </header>
 
     <section>

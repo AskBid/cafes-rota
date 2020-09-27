@@ -1,0 +1,4 @@
+<% @cafes.each do |c| %>
+	<%= image_tag(c.main_image.url, :alt => c.main_image.name) %>
+	<p><%= c.name %></p>
+<% end %>

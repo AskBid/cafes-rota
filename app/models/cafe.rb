@@ -6,4 +6,8 @@ class Cafe < ApplicationRecord
 	has_many :notes
 
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
+
+	def main_image
+		self.images.sample
+	end
 end

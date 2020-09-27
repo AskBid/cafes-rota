@@ -33,6 +33,13 @@ label {
 	width: 80px;
 }
 
+img {
+    float: left;
+    width:  100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 /*a:link - a normal, unvisited link
 a:visited - a link the user has visited
 a:hover - a link when the user mouses over it

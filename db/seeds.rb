@@ -21,7 +21,7 @@ cafe2.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads
 
 cafe3 = Cafe.new(name: 'TAB X TAB', location_url: 'https://g.page/TABxTABLondon?share')
 cafe3.links.build(name: 'website', url: 'https://tabxtab.com/')
-cafe3.images.build(name: 'wecoffe', url: 'https://lh5.googleusercontent.com/p/AF1QipO6EJM1syb9UgFtWhsjdNADOkp_AtWiQHzXgwFT=s870-k-no§')
+cafe3.images.build(name: 'google', url: 'https://lh5.googleusercontent.com/p/AF1QipO6EJM1syb9UgFtWhsjdNADOkp_AtWiQHzXgwFT=s870-k-no')
 
 cafe4 = Cafe.new(name: 'The Ambrose Cafe', location_url: 'https://goo.gl/maps/hBtBttkW2TYn2gWW7')
 cafe4.links.build(name: 'website', url: 'https://www.heals.com/heals-cafe')
