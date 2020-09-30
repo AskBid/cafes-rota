@@ -57,17 +57,20 @@ img {
   border-radius: 10px;
 }
 
+p b {
+	padding: 10px 5px 0px 20px;
+}
 
 .cafestable {
 	display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
 
 .cafetile {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 1fr;
   margin: 8px;
   padding: 10px;
   border: none;
@@ -78,9 +81,10 @@ img {
 .cafeid {
   display: grid;
   grid-template-rows: 1fr 1fr;
+  grid-template-columns: auto;
   text-align: center;
   margin: 0px auto;
-  height: 100%;
+  /*height: 100%;*/
   vertical-align: middle;
 }
 

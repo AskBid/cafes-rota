@@ -14,16 +14,11 @@ cafe1.links.build(name: 'website', url: 'https://www.cleanheartscafe.co.uk/')
 cafe1.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/clean-hearts-cafe/')
 cafe1.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/04/IMG-0765-compressed-scaled.jpg')
 
-cafe2 = Cafe.new(name: 'Holiday Inn Whitechapel')
-cafe2.links.build(name: 'website', url: 'https://www.cleanheartscafe.co.uk/')
-cafe2.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/holiday-inn-whitechapel/')
-cafe2.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/04/IMG-0765-compressed-scaled.jpg')
-
-cafe3 = Cafe.new(name: 'TAB X TAB', location_url: 'https://g.page/TABxTABLondon?share')
+cafe3 = Cafe.new(name: 'TAB X TAB', location_url: 'https://g.page/TABxTABLondon?share', location: 'Paddignton')
 cafe3.links.build(name: 'website', url: 'https://tabxtab.com/')
 cafe3.images.build(name: 'google', url: 'https://lh5.googleusercontent.com/p/AF1QipO6EJM1syb9UgFtWhsjdNADOkp_AtWiQHzXgwFT=s870-k-no')
 
-cafe4 = Cafe.new(name: 'The Ambrose Cafe', location_url: 'https://goo.gl/maps/hBtBttkW2TYn2gWW7')
+cafe4 = Cafe.new(name: 'The Ambrose Cafe', location_url: 'https://goo.gl/maps/hBtBttkW2TYn2gWW7', location: 'Warren Street')
 cafe4.links.build(name: 'website', url: 'https://www.heals.com/heals-cafe')
 cafe4.images.build(name: 'google', url: 'https://lh5.googleusercontent.com/p/AF1QipOmJQdvMR-qLY6TKzaT341S5SiCn6WTIF5bloYd=s720-k-no')
 cafe4.images.build(name: 'google', url: 'https://lh5.googleusercontent.com/p/AF1QipPgJWwXuZOJO32Dxwj7IC1XKhnVk9mZ6XuebW1W=s720-k-no')
@@ -119,7 +114,7 @@ cafe13.save
 cafe14.save
 cafe15.save
 
-u1.cafes << [cafe2, cafe1]
+u1.cafes << [cafe3, cafe1]
 
 u1.save
 u2.save

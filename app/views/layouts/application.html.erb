@@ -11,21 +11,24 @@
   <body <%= "class=home" if action_name == 'home' %>>
     
     <header>
-
       <div class="navwrap">
         <div>
-          <a href="/">| Home |</a>
+          <a href="/">Home</a>
         </div>
+        <div> | </div>
         <div>
-          <%= link_to '| Cafes |', cafes_path %>
+          <%= link_to 'Cafes', cafes_path %>
         </div>
+        <div> | </div>
         <% if user_is_authenticated %>
           <div>
-            <%= link_to '| Visits |', root_path %>
+            <%= link_to 'Visits', root_path %>
           </div>
+          <div> | </div>
           <div>
-            <%= link_to '| Profile |', user_path(current_user.slug) %>
+            <%= link_to 'Profile', user_path(current_user.slug) %>
           </div>
+          <div> | </div>
           <div id='log'>
             <%= link_to 'Logout', logout_path, :method => 'delete' %>
           </div>
