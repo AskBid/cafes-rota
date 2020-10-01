@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :cafes, param: :slug
   resources :notes
-  resources :users, param: :slug
+  resources :users, param: :slug do
+		resources :cafes, only: [:index]  	
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
