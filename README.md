@@ -4,32 +4,37 @@
 
 	- get: /cafes/
 
-			- get: /cafes/:id, cafes#show           
-				(shows links,images and public notes)
+			- get: /cafes/:id, cafes#show  >> shows cafes/:id/images, cafes/:id/links, cafes/:id/timings
+				-  get: cafes/:id/images, images#index  ?? do I need?
+				-  get: cafes/:id/timings, timings#index  ?? do I need?
 
-			- get: cafes/:id/edit, cafes#edit          
+			- get: cafes/:id/edit, cafes#edit  >> nested_attributes :links, :images, :timings
 
-			- get: /cafes/new, cafes#new            
+			- get: /cafes/new, cafes#new   >> nested_attributes :links, :images, :timings  
 
-    
-	- get: /users/:id/cafes               
-		(shows user list of fav cafes, in last visit order)
+			- post: /cafes/create, cafes#create         
+			- delete: /cafes/create, cafes#delete    
 
-		- get: /users/:id/cafes/id, cafes#show       
+	- get: /user/:id, users#show  >> show details of a user and his cafes and edit button
 
-			- get: /users/:id/cafes/:id/edit, cafes#edit
+		- get: /user/:id/edit 
 
-	- get: /users/:id/edit
-		(form: whows list of all cafes to pick from)
+		- patch: /user/:id/
+
+		- get: /users/:id/cafes/new, cafes#new  >> like '/cafes/new' but it will directly add the cafe to user's cafe
+
+		- get: /users/:id/visits, visits#index >> shows list of all cafes to pick from
+
+		- get: /users/:id/visits/new, visits#new
+
+		- post: /visits, visits#create, visits#delete
+ 
+		- path: /visits/:id,  visits#update  >> updates user last visit time
+
+		- delete: visits/:id, visits#delete
 
 
-	- post: /goings, goings#create
 
-
-
-- User can edit a Cafe by adding images or links
-- User can see its list of Cafes in /user/:id/cafes
-- User can make notes of a Cafe in /user/:id/cafe/:id
 
 
 
