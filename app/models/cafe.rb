@@ -15,4 +15,19 @@ class Cafe < ApplicationRecord
 	def main_image
 		self.images.sample
 	end
+
+	def populate_new_cafe(url_times: 3, img_times: 8)
+		url_times.times do 
+			self.links.build(name: 'other URLs')
+		end
+
+		img_times.times do 
+			self.images.build(name: 'google')
+		end
+
+		img_times.times do 
+			self.images.build(name: 'other')
+		end
+	end
+
 end
