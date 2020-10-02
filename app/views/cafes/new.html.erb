@@ -1,0 +1,18 @@
+<h1>Add a New Cafe</h1>
+
+<!-- using a semicolumned model name will fill the form 
+with an empty model without the need to create one -->
+
+<%= form_for(:cafe) do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+	<br>
+
+	<br>
+	<%= f.submit 'Submit' %>
+
+<% end %>

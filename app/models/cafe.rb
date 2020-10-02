@@ -1,4 +1,6 @@
 class Cafe < ApplicationRecord
+	include Slug
+
 	has_many :visits
 	has_many :users, through: :visits
 	has_many :links
