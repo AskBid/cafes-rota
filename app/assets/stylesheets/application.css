@@ -24,6 +24,10 @@ input[type="submit"] {
   line-height: 50px;
 }
 
+legend {
+  color: #b98;
+}
+
 a {
 	text-decoration: none;
 	color: white;
@@ -56,6 +60,16 @@ section u a:hover {
 label {
 	display: inline-block;
 	width: 100px;
+}
+
+fieldset label {
+  color: grey;
+  font-size: 11px;
+  width: 60px;
+}
+
+fieldset input[type="text"] {
+  width: 100%;
 }
 
 img {
