@@ -28,6 +28,7 @@ with an empty model without the need to create one -->
 		<%= f.fields_for :links do |link| %>
 				<%= link.label link.object.name %>
 				<%= link.text_field :url %>
+				<%= link.hidden_field :name %>
 				<br>
 		<% end %>
 	</fieldset>
@@ -39,6 +40,7 @@ with an empty model without the need to create one -->
 		<%= f.fields_for :images do |img| %>
 				<%= img.label img.object.name %>
 				<%= img.text_field :url %>
+				<%= img.hidden_field :name %>
 		<% end %>
 	</fieldset>
 

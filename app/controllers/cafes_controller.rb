@@ -17,6 +17,13 @@ class CafesController < ApplicationController
 	private
 
 	def cafe_params
-		params.require(:cafe).permit(links_attributes: [:url])
+		params.require(:cafe).permit(
+			:name,
+			:location,
+			:location_url,
+			:description,
+			links_attributes: [:name, :url],
+			images_attributes: [:name, :url]
+		)
 	end
 end

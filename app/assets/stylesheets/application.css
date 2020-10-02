@@ -20,9 +20,9 @@ textarea {
 }
 
 input[type="submit"] {
-  width: 250px;
+  width: 200px;
   line-height: 50px;
-  background-color: orange;
+  background-color: #fae7d2;
 }
 
 input[type="text"] {

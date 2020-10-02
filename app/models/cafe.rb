@@ -8,6 +8,9 @@ class Cafe < ApplicationRecord
 	has_many :notes
 
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
+	validates :name, presence: { message: "%{attribute} must be given" }
+
+	before_save :downcase_name
 
 	accepts_nested_attributes_for :links
 	accepts_nested_attributes_for :images
