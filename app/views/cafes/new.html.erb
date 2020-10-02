@@ -1,7 +1,13 @@
 <h1>Add a New Cafe</h1>
 
-<!-- using a semicolumned model name will fill the form 
-with an empty model without the need to create one -->
+<br>
+<% if flash.alert %>
+	<ul>
+	  <% flash.alert.each do |message| %>
+	    <li class='flash'><%= message.first.to_s %></li>
+	  <% end %>
+	</ul>
+<% end %>
 
 <%= form_for(@cafe) do |f| %>
 

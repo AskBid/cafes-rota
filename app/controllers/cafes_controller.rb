@@ -11,7 +11,16 @@ class CafesController < ApplicationController
 
 	def create
 		cafe = Cafe.new(cafe_params)
-		binding.pry
+		if cafe.save
+			redirect_to cafe_path(cafe.slug)
+		else
+			flash[:alert] = cafe.errors.messages.map {|k, m| m}
+			redirect_to new_cafe_path
+		end 
+	end
+
+	def show
+		@cafe = Cafe.find_by_slug(params[:slug])
 	end
 
 	private
