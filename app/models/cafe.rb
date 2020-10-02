@@ -12,8 +12,7 @@ class Cafe < ApplicationRecord
 
 	before_save :downcase_name
 
-	accepts_nested_attributes_for :links
-	accepts_nested_attributes_for :images
+	accepts_nested_attributes_for :links, :images, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
 
 	def main_image
 		self.images.sample
