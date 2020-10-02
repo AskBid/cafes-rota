@@ -6,9 +6,17 @@ class CafesController < ApplicationController
 	def new
 		@cafe = Cafe.new
 		@cafe.links.build(name: 'website')
-		@cafe.links.build(name: 'other url')
-		@cafe.links.build(name: 'other url')
-		@cafe.links.build(name: 'other url')
-		@cafe.links.build(name: 'other url')
+		
+		3.times do 
+			@cafe.links.build(name: 'other Url')
+		end
+
+		8.times do 
+			@cafe.images.build(name: 'google')
+		end
+
+		8.times do 
+			@cafe.images.build(name: 'other websites')
+		end
 	end
 end
