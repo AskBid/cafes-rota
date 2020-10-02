@@ -9,6 +9,8 @@ class Cafe < ApplicationRecord
 
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
 
+	accepts_nested_attributes_for :links
+
 	def main_image
 		self.images.sample
 	end

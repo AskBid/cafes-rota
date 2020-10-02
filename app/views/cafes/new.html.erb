@@ -3,7 +3,7 @@
 <!-- using a semicolumned model name will fill the form 
 with an empty model without the need to create one -->
 
-<%= form_for(:cafe) do |f| %>
+<%= form_for(@cafe) do |f| %>
 
 	<%= f.label :name %>
 	<%= f.text_field :name %>
@@ -11,6 +11,24 @@ with an empty model without the need to create one -->
 	<%= f.label :location %>
 	<%= f.text_field :location %>
 	<br>
+	<%= f.label :location_url %>
+	<%= f.text_field :location_url %>
+	<br>
+	<br>
+	<br>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+	<br>
+	<br>
+
+	<fieldset>
+		<legend>URLs to this Cafe's related websites</legend>
+		<%= f.fields_for :links do |link| %>
+				<%= link.label link.object.name %>
+				<%= link.text_field :url %>
+				<br>
+		<% end %>
+	</fieldset>
 
 	<br>
 	<%= f.submit 'Submit' %>
