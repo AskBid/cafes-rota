@@ -1,5 +1,6 @@
 class Cafe < ApplicationRecord
-	include Slug
+	include Slug::InstanceMethods
+	extend Slug::ClassMethods
 
 	has_many :visits
 	has_many :users, through: :visits

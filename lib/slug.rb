@@ -1,14 +1,18 @@
 module Slug
-	def downcase_name
-		self.name = self.name.downcase
+	module InstanceMethods
+		def downcase_name
+			self.name = self.name.downcase
+		end
+
+		def slug
+			self.name.gsub(' ', '-')
+		end
 	end
 
-	def slug
-		self.name.gsub(' ', '-')
-	end
-
-	def self.find_by_slug(slug)
-		slug = slug.gsub('-', ' ')
-		self.find_by(name: slug)
+	module ClassMethods
+		def find_by_slug(slug)
+			slug = slug.gsub('-', ' ')
+			find_by(name: slug)
+		end
 	end
 end

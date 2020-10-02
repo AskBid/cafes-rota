@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-	include Slug
+	include Slug::InstanceMethods
+	extend Slug::ClassMethods
 
 	has_many :notes
 	has_many :visits
