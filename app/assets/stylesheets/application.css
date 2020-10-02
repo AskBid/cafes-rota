@@ -20,8 +20,13 @@ textarea {
 }
 
 input[type="submit"] {
-  width: 200px;
+  width: 250px;
   line-height: 50px;
+  background-color: orange;
+}
+
+input[type="text"] {
+  width: 400px;
 }
 
 legend {
