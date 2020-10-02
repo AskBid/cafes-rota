@@ -2,6 +2,12 @@ require_relative 'boot'
 
 #require 'rails/all'
 
+module MyApp
+  class Application < Rails::Application
+    config.eager_load_paths += %W(#{config.root}/lib)
+  end
+end
+
 # Check out what rails/all.rb is currently expanded to:
 #  https://github.com/rails/rails/blob/master/railties/lib/rails/all.rb
 # Replace `require 'rails/all'` with just the libs that you want and 

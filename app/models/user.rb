@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+	include Slug
+
 	has_many :notes
 	has_many :visits
 	has_many :cafes, through: :visits
@@ -23,16 +25,16 @@ class User < ApplicationRecord
 		end
 	end
 
-	def downcase_name
-		self.name = self.name.downcase
-	end
+	# def downcase_name
+	# 	self.name = self.name.downcase
+	# end
 
-	def slug
-		self.name.gsub(' ', '-')
-	end
+	# def slug
+	# 	self.name.gsub(' ', '-')
+	# end
 
-	def self.find_by_slug(slug)
-  	slug = slug.gsub('-', ' ')
-  	self.find_by(name: slug)
-  end
+	# def self.find_by_slug(slug)
+	# 	slug = slug.gsub('-', ' ')
+	# 	self.find_by(name: slug)
+	# end
 end
