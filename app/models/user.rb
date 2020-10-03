@@ -25,4 +25,10 @@ class User < ApplicationRecord
 			u.password = SecureRandom.hex(15)
 		end
 	end
+
+	def missing_cafes
+		all_cafes = Cafe.all
+		my_cafes = self.cafes
+		all_cafes - my_cafes
+	end
 end

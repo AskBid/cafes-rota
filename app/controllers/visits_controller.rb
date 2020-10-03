@@ -5,7 +5,8 @@ class VisitsController < ApplicationController
   end
 
   def new
-  	@cafes = Cafe.all
+    user = User.find_by_slug(user_params[:user_slug])
+  	@cafes = user.missing_cafes
   end
 
   def create
