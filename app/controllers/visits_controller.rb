@@ -8,6 +8,11 @@ class VisitsController < ApplicationController
   	@cafes = Cafe.all
   end
 
+  def create
+    # binding.pry
+    redirect_to new_user_visit_path(current_user.slug)
+  end
+
   private
 
   def user_params

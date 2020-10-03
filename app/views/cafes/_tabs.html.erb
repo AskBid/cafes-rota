@@ -11,10 +11,10 @@
 			<text class=location><%= c.location %></text>
 		</div>
 		<% if user_is_authenticated && controller_name == 'visits'%>
-			<%= form_for(:visit) do |f| %>
-				<%= f.hidden_field :cafe_id, value: c.id%>
-				<%= f.hidden_field :user_id, value: current_user.id %>
-				<%= f.submit '+', class: 'add' %>
+			<%= form_tag("/visits", method: "post") do %>
+				<%= hidden_field_tag('visit[:cafe_id]', value = c.id) %>
+				<%= hidden_field_tag('visit[:user_id]', value = current_user.id) %>
+				<%= submit_tag "+", class: 'add' %>
 			<% end %>
 		<% end %>
 	</div>
