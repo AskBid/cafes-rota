@@ -4,6 +4,10 @@ class VisitsController < ApplicationController
   	@visits = @user.visits
   end
 
+  def new
+  	@cafes = Cafe.all
+  end
+
   private
 
   def user_params

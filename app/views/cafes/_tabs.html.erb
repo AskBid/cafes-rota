@@ -1,0 +1,11 @@
+<% @cafes.each do |c| %>
+	<%= link_to cafe_path(c) do %>
+		<div class='cafetile'>
+			<%= image_tag(c.main_image.url, :alt => c.main_image.name) %>
+			<div class='cafeid'>
+				<p><b><%= c.name %></b></p>
+				<text class=location><%= c.location %></text>
+			</div>
+		</div>
+	<% end %>
+<% end %>
