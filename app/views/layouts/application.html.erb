@@ -22,7 +22,7 @@
         <div> | </div>
         <% if user_is_authenticated %>
           <div>
-            <%= link_to 'Visits', root_path %>
+            <%= link_to 'Visits', user_visits_path(current_user.slug) %>
           </div>
           <div> | </div>
           <div>
