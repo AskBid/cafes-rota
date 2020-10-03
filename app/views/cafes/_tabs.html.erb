@@ -1,12 +1,22 @@
 <% @cafes.each do |c| %>
-	<%= link_to cafe_path(c) do %>
-		<div class='cafetile'>
+	
+	<div class='cafetile'>
+		<%= link_to cafe_path(c) do %>
 			<%= image_tag(c.main_image.url, :alt => c.main_image.name) %>
-			<div class='cafeid'>
+		<% end %>
+		<div class='cafeid'>
+			<%= link_to cafe_path(c) do %>
 				<p><b><%= c.name %></b></p>
-				<text class=location><%= c.location %></text>
-			</div>
-			<div class='add'><span class='text'>+</span></div>
+			<% end %>
+			<text class=location><%= c.location %></text>
 		</div>
-	<% end %>
+		<% if user_is_authenticated && controller_name == 'visits'%>
+			<%= form_for(:visit) do |f| %>
+				<%= f.hidden_field :cafe_id, value: c.id%>
+				<%= f.hidden_field :user_id, value: current_user.id %>
+				<%= f.submit '+', class: 'add' %>
+			<% end %>
+		<% end %>
+	</div>
+	
 <% end %>
