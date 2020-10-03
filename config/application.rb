@@ -2,11 +2,11 @@ require_relative 'boot'
 
 #require 'rails/all'
 
-module MyApp
-  class Application < Rails::Application
-    config.eager_load_paths += %W(#{config.root}/lib)
-  end
-end
+# module MyApp
+#   class Application < Rails::Application
+#     config.eager_load_paths += %W(#{config.root}/lib)
+#   end
+# end
 
 # Check out what rails/all.rb is currently expanded to:
 #  https://github.com/rails/rails/blob/master/railties/lib/rails/all.rb
@@ -37,5 +37,9 @@ module CafesRota
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+  end
+
+  class Application < Rails::Application
+    config.eager_load_paths += %W(#{config.root}/lib)
   end
 end
