@@ -6,6 +6,6 @@
 	</div>
 <% end %>
 
-<% if @cafes %>
-<%= render partial: "cafes/tabs" %>
+<% if !@visits.empty? %>
+	<%= render partial: "tabs" %>
 <% end %>
