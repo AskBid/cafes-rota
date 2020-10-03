@@ -90,24 +90,50 @@ p b {
 	padding: 10px 5px 0px 20px;
 }
 
+.add {
+  color: white;
+  background-color: #ebdac7;
+  border-radius: 5px;
+  height: 100%;
+  vertical-align: middle;
+  padding: 0;
+  display: table;
+}
+
+.add:hover {
+  background-color: orange;
+  border-radius: 10px;
+}
+
+.text{ 
+  color:#fff; 
+  vertical-align: middle; 
+  height: 50px; 
+  display: table-cell; 
+} 
+
+
 .cafestable {
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
+  text-align: center;
 }
 
 .cafetile {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr 0.2fr;
   grid-template-rows: 1fr;
   margin: 8px;
   padding: 10px;
   border: none;
   border-radius: 15px;
   background-color: #f5efe9;
+  vertical-align: middle;
 }
 
 .cafeid {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: auto;
