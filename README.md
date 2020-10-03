@@ -21,7 +21,7 @@
 
 		- patch: /user/:id/
 
-		- get: /users/:id/cafes/new, cafes#new  >> like '/cafes/new' but it will directly add the cafe to user's cafe
+		<!-- - get: /users/:id/cafes/new, cafes#new  >> like '/cafes/new' but it will directly add the cafe to user's cafe -->
 
 		- get: /users/:id/visits, visits#index >> shows list of all cafes to pick from
 

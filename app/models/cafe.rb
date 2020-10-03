@@ -15,9 +15,9 @@ class Cafe < ApplicationRecord
 
 	accepts_nested_attributes_for :links, :images, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
 
-	def links_attributes=(link_attributes)
-		binding.pry
-	end
+	# def links_attributes=(link_attributes)
+	# 	binding.pry
+	# end
 
 	# def images_attributes=(link_attributes)
 	# 	# empty
