@@ -1,4 +1,4 @@
-<h1><%= @user.name %>'s visits:</h1>
+<h1><%= capitalize_each_word(@user.name) %>'s visits:</h1>
 
 <%= link_to new_user_visit_path do %>
 	<div class='cafetile'>
