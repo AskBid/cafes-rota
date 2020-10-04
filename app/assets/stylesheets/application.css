@@ -38,6 +38,11 @@ a {
 	color: white;
 }
 
+section h1 a {
+  text-decoration: underline;
+  color: black;
+}
+
 section u a {
 	text-decoration: underline;
 	color: white;

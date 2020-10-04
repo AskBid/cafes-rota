@@ -1,19 +1,19 @@
 class VisitsController < ApplicationController
   def index
-    this_user
+    @user = this_user
   	@visits = @user.visits
   end
 
   def new
-    this_user
+    @user = this_user
   	@cafes = @user.missing_cafes
   end
 
   def create
-    this_user
-    @user.cafe_ids << visit_params[:cafe_id]
-    binding.pry
-    redirect_to new_user_visit_path(@user.slug)
+    user = this_user
+    user.cafes << this_cafe
+    
+    redirect_to new_user_visit_path(user.slug)
   end
 
   def update
@@ -23,7 +23,11 @@ class VisitsController < ApplicationController
   private
 
   def this_user
-    @user = User.find_by_slug(user_params[:user_slug])
+    User.find_by_slug(user_params[:user_slug])
+  end 
+
+  def this_cafe
+    Cafe.find(visit_params[:cafe_id])
   end 
 
   def user_params

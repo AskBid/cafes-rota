@@ -12,7 +12,7 @@
 		</div>
 		<% if user_is_authenticated && controller_name == 'visits'%>
 			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
-				<%= hidden_field_tag('visit[:cafe_id]', value = c.id) %>
+				<%= hidden_field_tag('visit[cafe_id]', value = c.id) %>
 				<%= submit_tag "+", class: 'add' %>
 			<% end %>
 		<% end %>
