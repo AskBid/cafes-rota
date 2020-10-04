@@ -1,7 +1,7 @@
 class VisitsController < ApplicationController
   def index
     @user = this_user
-  	@visits = @user.visits
+  	@visits = @user.visits.order(:last_visited)
   end
 
   def new

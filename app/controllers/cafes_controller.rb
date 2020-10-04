@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
 	def index
-		@cafes = Cafe.all
+		@cafes = Cafe.all.shuffle
 	end
 
 	def new
