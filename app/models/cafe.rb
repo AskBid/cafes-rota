@@ -15,7 +15,7 @@ class Cafe < ApplicationRecord
 	before_save :downcase_name
 
 	accepts_nested_attributes_for :links, :images, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
-
+	after_initialize :populate_new_cafe
 	# def links_attributes=(link_attributes)
 	# 	binding.pry
 	# end
@@ -29,6 +29,16 @@ class Cafe < ApplicationRecord
 	end
 
 	def populate_new_cafe(url_times: 3, img_times: 8)
+		self.openings.build(day: 'monday')
+		self.openings.build(day: 'tuesday')
+		self.openings.build(day: 'wednesday')
+		self.openings.build(day: 'thursday')
+		self.openings.build(day: 'friday')
+		self.openings.build(day: 'saturday')
+		self.openings.build(day: 'sunday')
+
+		self.links.build(name: 'website')
+
 		url_times.times do 
 			self.links.build(name: 'other URLs')
 		end

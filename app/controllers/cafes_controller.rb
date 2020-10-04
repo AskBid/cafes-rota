@@ -5,8 +5,6 @@ class CafesController < ApplicationController
 
 	def new
 		@cafe = Cafe.new
-		@cafe.links.build(name: 'website')
-		@cafe.populate_new_cafe
 	end
 
 	def create
