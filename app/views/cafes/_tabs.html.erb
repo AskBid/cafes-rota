@@ -1,5 +1,5 @@
 <% @cafes.each do |c| %>
-	
+
 	<div class='cafetile'>
 		<%= link_to cafe_path(c) do %>
 			<%= image_tag(c.main_image.url, :alt => c.main_image.name) %>
@@ -11,9 +11,8 @@
 			<text class=location><%= c.location %></text>
 		</div>
 		<% if user_is_authenticated && controller_name == 'visits'%>
-			<%= form_tag("/visits", method: "post") do %>
+			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
 				<%= hidden_field_tag('visit[:cafe_id]', value = c.id) %>
-				<%= hidden_field_tag('visit[:user_id]', value = current_user.id) %>
 				<%= submit_tag "+", class: 'add' %>
 			<% end %>
 		<% end %>

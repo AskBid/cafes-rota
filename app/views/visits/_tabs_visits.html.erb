@@ -14,8 +14,6 @@
 		<% if user_is_authenticated && controller_name == 'visits' %>
 			<%= form_tag("/visits/#{v.id}", method: "patch") do %>
 				<%= hidden_field_tag('visit[:cafe_id]', value = v.cafe.id) %>
-				<%= hidden_field_tag('visit[:user_id]', value = current_user.id) %>
-				<%= hidden_field_tag('visit[:last_visited]', value = 'helper_methd_to_go_here') %>
 				<%= submit_tag "GO!", class: 'add' %>
 			<% end %>
 		<% end %>
