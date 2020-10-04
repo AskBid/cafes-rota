@@ -11,8 +11,10 @@ module Slug
 
 	module ClassMethods
 		def find_by_slug(slug)
-			slug = slug.gsub('-', ' ')
-			find_by(name: slug)
+			if slug
+				slug = slug.gsub('-', ' ')
+				find_by(name: slug)
+			end
 		end
 	end
 end
