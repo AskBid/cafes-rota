@@ -9,7 +9,7 @@
 				<p><b><%= v.cafe.name %></b></p>
 			<% end %>
 			<text class=location><%= v.cafe.location %></text>
-			<text class=location><%= link_to "Last Visit: #{v.last_visited}", edit_visit_path(v) %></text>
+			<text class=location><%= last_visit_label(v) %><%= link_to "#{format_last_visit(v)}", edit_visit_path(v) %></text>
 		</div>
 		<% if user_is_authenticated && controller_name == 'visits' %>
 			<%= form_tag(visit_path(v), method: "patch") do %>
