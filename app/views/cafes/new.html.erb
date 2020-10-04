@@ -30,6 +30,18 @@
 	<br>
 
 	<fieldset>
+		<legend>Openings</legend>
+		<%= f.fields_for :openings do |day| %>
+				<%= day.label day.object.day %>
+				<%= day.select(:status, [['open', 'open'], ['close', 'close']]) %>
+				<%= day.hidden_field :day %>
+				<br>
+		<% end %>
+	</fieldset>
+
+<br>
+
+	<fieldset>
 		<legend>URLs to this Cafe's related websites</legend>
 		<%= f.fields_for :links do |link| %>
 				<%= link.label link.object.name %>
