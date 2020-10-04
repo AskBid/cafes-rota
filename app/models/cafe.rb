@@ -15,7 +15,7 @@ class Cafe < ApplicationRecord
 	before_save :downcase_name
 
 	accepts_nested_attributes_for :links, :images, :openings, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
-	after_initialize :populate_new_cafe
+	# after_initialize :populate_new_cafe
 	# def links_attributes=(link_attributes)
 	# 	binding.pry
 	# end
