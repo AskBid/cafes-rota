@@ -3,6 +3,7 @@
 <%= form_for(@visit) do |f| %>
 	<%= f.label :last_visited %>
 	<%= f.text_field :last_visited %>
+	<%= f.hidden_field :id %>
 	<br>
 	<br>
 	<%= f.submit 'Edit' %>

@@ -21,7 +21,10 @@ class VisitsController < ApplicationController
   end
 
   def update
-    binding.pry
+    visit = Visit.find_by(id: visit_params[:id])
+    visit.last_visited = Date.parse(visit_params[:last_visited])
+    visit.save
+    redirect_to user_visits_path(visit.user.slug)
   end
 
   private
@@ -39,6 +42,6 @@ class VisitsController < ApplicationController
   end
 
   def visit_params
-    params.require(:visit).permit(:cafe_id)
+    params.require(:visit).permit(:cafe_id, :last_visited, :id)
   end
 end
