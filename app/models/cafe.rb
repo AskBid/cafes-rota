@@ -7,6 +7,7 @@ class Cafe < ApplicationRecord
 	has_many :links
 	has_many :images
 	has_many :notes
+	has_many :openings
 
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
 	validates :name, presence: { message: "%{attribute} must be given" }
