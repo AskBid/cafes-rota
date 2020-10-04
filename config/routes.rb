@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :cafes, param: :slug
   resources :notes
-  resources :visits
+  resources :visits, only: [:index, :update, :edit]
   resources :users, param: :slug do
 		resources :cafes, only: [:index]
 		resources :visits, only: [:index, :new, :create]  	

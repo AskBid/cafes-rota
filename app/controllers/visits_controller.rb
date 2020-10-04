@@ -16,6 +16,10 @@ class VisitsController < ApplicationController
     redirect_to new_user_visit_path(user.slug)
   end
 
+  def edit
+    @visit = Visit.find_by(id: params.permit(:id)[:id].to_i)
+  end
+
   def update
     binding.pry
   end
