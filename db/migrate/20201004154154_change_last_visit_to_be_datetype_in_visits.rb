@@ -5,6 +5,6 @@ class ChangeLastVisitToBeDatetypeInVisits < ActiveRecord::Migration[6.0]
   end
 
   def up
-  	change_column :visits, :last_visited, :datetime
+  	change_column :visits, :last_visited, :date
   end
 end

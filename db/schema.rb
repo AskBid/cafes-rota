@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_10_04_154154) do
   create_table "visits", force: :cascade do |t|
     t.integer "cafe_id"
     t.integer "user_id"
-    t.datetime "last_visited"
+    t.date "last_visited"
     t.datetime "skip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
