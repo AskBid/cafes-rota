@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_04_210549) do
+ActiveRecord::Schema.define(version: 2020_10_04_212058) do
 
   create_table "cafes", force: :cascade do |t|
     t.string "name"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_10_04_210549) do
 
   create_table "openings", force: :cascade do |t|
     t.string "day"
-    t.boolean "status"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "cafe_id"
