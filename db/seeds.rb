@@ -201,7 +201,7 @@ cafe15.openings.build(day: 'sunday', status: 'open')
 
 cafe16 = Cafe.new(name: 'Always Closed Cafe', location: "DreamLand")
 cafe16.links.build(name: 'wecoffe', url: 'https://cafeofyourdreams.com/')
-cafe16.images.build(name: 'wecoffe', url: 'https://images.labroots.com/content_article_profile_image_1074bd9220a8153ff4e617e1cae5302f24dc173d_6421.jpg')
+cafe16.images.build(name: 'wecoffe', url: 'https://media-cdn.tripadvisor.com/media/photo-s/19/f1/5a/40/ph-cafe-psychedelic-hues.jpg')
 cafe16.openings.build(day: 'monday', status: 'close')
 cafe16.openings.build(day: 'tuesday', status: 'close')
 cafe16.openings.build(day: 'wednesday', status: 'close')
