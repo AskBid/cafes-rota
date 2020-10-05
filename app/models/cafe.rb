@@ -15,14 +15,14 @@ class Cafe < ApplicationRecord
 	before_save :downcase_name
 
 	accepts_nested_attributes_for :links, :images, :openings, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
-	# after_initialize :populate_new_cafe
-	# def links_attributes=(link_attributes)
-	# 	binding.pry
-	# end
 
-	# def images_attributes=(link_attributes)
-	# 	# empty
-	# end
+	scope :open_cafes, -> (wday) { joins(:openings).where("day = ? AND status = 'open'", wday) }
+
+  def self.today
+		Date.today.strftime("%A").downcase
+	end
+
+	# scope :open_cafes, -> { joins(:openings).where("day = ? AND status = 'open'", self.today) }
 
 	def main_image
 		self.images.sample
