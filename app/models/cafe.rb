@@ -20,8 +20,6 @@ class Cafe < ApplicationRecord
 
 	scope :by_location, -> (location) {where("location = ?", location)}
 
-	scope :visiting_today, -> (user_id, todays_date) {joins(:visits).where("user_id = ? AND last_visited = ?", user_id, todays_date) }
-
   def self.today
 		Date.today.strftime("%A").downcase
 	end
