@@ -16,13 +16,15 @@ class Cafe < ApplicationRecord
 
 	accepts_nested_attributes_for :links, :images, :openings, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
 
-	scope :open_cafes, -> (wday) { joins(:openings).where("day = ? AND status = 'open'", wday) }
+	scope :open, -> (wday) {joins(:openings).where("day = ? AND status = 'open'", wday)}
+
+	scope :by_location, -> (location) {where("location = ?", location)}
+
+	scope :visiting_today, -> (user_id, todays_date) {joins(:visits).where("user_id = ? AND last_visited = ?", user_id, todays_date) }
 
   def self.today
 		Date.today.strftime("%A").downcase
 	end
-
-	# scope :open_cafes, -> { joins(:openings).where("day = ? AND status = 'open'", self.today) }
 
 	def main_image
 		self.images.sample
