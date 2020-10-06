@@ -20,9 +20,9 @@ class Cafe < ApplicationRecord
 
 	scope :by_location, -> (location) {where("location = ?", location)}
 
-  def self.today
-		Date.today.strftime("%A").downcase
-	end
+ #  def self.today
+	# 	Date.today.strftime("%A").downcase
+	# end
 
 	def main_image
 		self.images.sample
