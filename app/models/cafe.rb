@@ -12,17 +12,16 @@ class Cafe < ApplicationRecord
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
 	validates :name, presence: { message: "%{attribute} must be given" }
 
-	before_save :downcase_name
+	before_save :downcase_name, :location_prep
 
 	accepts_nested_attributes_for :links, :images, :openings, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
 
 	scope :open, -> (wday) {joins(:openings).where("day = ? AND status = 'open'", wday)}
-
 	scope :by_location, -> (location) {where("location = ?", location)}
 
- #  def self.today
-	# 	Date.today.strftime("%A").downcase
-	# end
+	def location_prep
+		self.location = self.location.downcase.gsub(' ','-')
+	end
 
 	def main_image
 		self.images.sample
