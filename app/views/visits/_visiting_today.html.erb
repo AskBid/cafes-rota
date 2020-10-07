@@ -1,11 +1,9 @@
-<% @visits.each do |v| %>
-	
-	<div class='cafetilesmall'>
-			<%= link_to cafe_path(v.cafe.slug) do %>
+<text style="color: black"><b><p>Visiting today:</p></b></text>
+<% @visits_today.each do |v| %>
+	<%= link_to edit_visit_path(v) do %>
+		<div class='cafetilesmall'>
 				<b><%= capitalize_each_word(v.cafe.name) %></b>
-			<% end %>
-
-			<text class=location><%= v.cafe.location %></text>
-	</div>
-	
+				<text class=location><%= v.cafe.location %></text>
+		</div>
+	<% end %>
 <% end %>

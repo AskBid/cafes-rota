@@ -3,7 +3,7 @@ module VisitHelper
 		if visit.last_visited
 			"Last Visit: "
 		else
-			"Never visited! (on record.)"
+			"Never visited!"
 		end
 	end
 

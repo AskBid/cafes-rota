@@ -1,6 +1,7 @@
 class VisitsController < ApplicationController
   def index
     @user = this_user
+    @visits_today = Visit.by_user_today(@user.id, Date.today)
   	@visits = @user.visits.order(:last_visited)
   end
 
@@ -22,7 +23,11 @@ class VisitsController < ApplicationController
 
   def update
     visit = Visit.find_by(id: visit_params[:id])
-    visit.last_visited = Date.parse(visit_params[:last_visited])
+    if !visit_params[:last_visited].empty?
+      visit.last_visited = Date.parse(visit_params[:last_visited])
+    else
+      visit.last_visited = nil
+    end
     visit.save
     redirect_to user_visits_path(visit.user.slug)
   end

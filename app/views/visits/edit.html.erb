@@ -1,4 +1,4 @@
-<h1>Edit Visit:</h1>
+<h1>Edit Visit to <%= link_to @visit.cafe.name, cafe_path(@visit.cafe.slug) %>:</h1>
 
 <%= form_for(@visit) do |f| %>
 	<%= f.label :last_visited %>
