@@ -1,4 +1,8 @@
-<text style="color: black"><b><p>Visiting today:</p></b></text>
+<% if !@visits_today.empty? %>
+	<text style="color: darkgrey">
+		<b><p>Visiting today:</p></b>
+	</text>
+<% end %>
 <% @visits_today.each do |v| %>
 	<%= link_to edit_visit_path(v) do %>
 		<div class='cafetilesmall'>
