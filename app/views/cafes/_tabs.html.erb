@@ -8,8 +8,7 @@
 			<%= link_to cafe_path(c) do %>
 				<p><b><%= capitalize_each_word(c.name) %></b></p>
 			<% end %>
-			<%= link_to c.location, location_cafes_path(c.location), class: 'location' %>
-			<text class=location><%= c.location %></text>
+			<%= render partial: "location" %>
 		</div>
 		<% if user_is_authenticated && controller_name == 'visits'%>
 			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>

@@ -23,7 +23,6 @@ class CafesController < ApplicationController
 	end
 
 	def location
-		binding.pry
 		@location = params[:location]
 		@open_cafes = Cafe.open(today).by_location(@location)
 		@cafes_location = Cafe.by_location(@location)
