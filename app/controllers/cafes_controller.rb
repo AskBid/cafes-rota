@@ -22,7 +22,20 @@ class CafesController < ApplicationController
 		@cafe = Cafe.find_by_slug(params[:slug])
 	end
 
+	def location
+		binding.pry
+		@location = params[:location]
+		@open_cafes = Cafe.open(today).by_location(@location)
+		@cafes_location = Cafe.by_location(@location)
+		
+		render '/location'
+	end
+
 	private
+
+	def location_params
+		params.permit(:location)
+	end
 
 	def cafe_params
 		params.require(:cafe).permit(

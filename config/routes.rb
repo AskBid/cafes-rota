@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 	post '/login', to: 'sessions#create'
 	delete '/logout', to: 'sessions#destroy'
 
-	get '/:location/cafes', to: 'cafes#location'
+	get '/:location/cafes', to: 'cafes#location', as: 'location_cafes'
 
   resources :cafes, param: :slug
   resources :notes
