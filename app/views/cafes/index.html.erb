@@ -7,5 +7,5 @@
 				<h3>Add your own Cafe' +</h3>
 		</div>
 	<% end %>
-	<%= render partial: "tabs" %>
+	<%= render partial: "application/tabs", locals: {collection: @cafes} %>
 </div>

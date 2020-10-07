@@ -1,0 +1,40 @@
+<% collection.each do |instance| %>
+
+	<% cafe = instance.class.to_s == 'Visit' ? instance.cafe : instance %>
+
+	<div class='cafetile'>
+
+		<%= link_to cafe_path(cafe.slug) do %>
+			<%= image_tag(cafe.main_image.url, :alt => cafe.main_image.name) %>
+		<% end %>
+
+		<div class='cafeid'>
+			<%= link_to cafe_path(cafe.slug) do %>
+				<p><b><%= capitalize_each_word(cafe.name) %></b></p>
+			<% end %>
+			
+			<%= link_to capitalize_each_word(cafe.location), location_cafes_path(cafe.location), class: 'location' %>
+
+			<% if user_is_authenticated && instance.class.to_s == 'Visit'%>
+				<text class=location><%= last_visit_label(instance) %><%= link_to "#{format_last_visit(instance)}", edit_visit_path(instance) %></text>
+			<% end %>
+		</div>
+
+		<% if user_is_authenticated && controller_name != 'cafes'%>
+			<% if instance.class.to_s == 'Visit' %>
+				<%= form_tag(visit_path(instance), method: "patch") do %>
+					<%= hidden_field_tag('visit[id]', value = instance.id) %>
+					<%= hidden_field_tag('visit[last_visited]', value = Date.today) %>
+					<%= submit_tag "GO!", class: 'add' %>
+				<% end %>
+			<% elsif instance.class.to_s == 'Cafe' %>
+				<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
+				<%= hidden_field_tag('visit[cafe_id]', value = instance.id) %>
+				<%= submit_tag "+", class: 'add' %>
+				<% end %>
+			<% end %>
+		<% end %>
+
+	</div>
+	
+<% end %>

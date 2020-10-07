@@ -1,5 +1,5 @@
 <h1> Choose which cafe you want to add to your <%= link_to 'visits', user_visits_path(current_user.slug) %></h1>
 
 <div class='cafestable'>
-	<%= render partial: "cafes/tabs" %>
+	<%= render partial: "application/tabs", locals: {collection: @cafes} %>
 </div>
