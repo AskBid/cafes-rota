@@ -8,7 +8,7 @@
 			<%= link_to cafe_path(v.cafe.slug) do %>
 				<p><b><%= capitalize_each_word(v.cafe.name) %></b></p>
 			<% end %>
-			<%= render partial: "cafes/location" %>
+			<%= render partial: "cafes/location", locals: {location: v.cafe.location} %>
 			<text class=location><%= last_visit_label(v) %><%= link_to "#{format_last_visit(v)}", edit_visit_path(v) %></text>
 		</div>
 		<% if user_is_authenticated && controller_name == 'visits' %>
