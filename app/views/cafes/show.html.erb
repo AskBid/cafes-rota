@@ -1,5 +1,42 @@
 <h1><%= capitalize_each_word(@cafe.name) %></h1>
-<div><text  class='location'><%= capitalize_each_word(@cafe.location) %></text></div>
+<div><%= link_to capitalize_each_word(@cafe.location), @cafe.location_url, class: 'location' %></div>
 <br><br>
+
+<h3>Links:</h3>
+<ul>
+<% @cafe.links do |link| %>
+	<% binding.pry %> 
+	<li><%= link_to "#{@cafe.name} #{link.name}", link.url %></li>
+<% end %>
+</ul>
+
+<h3>Closed on:</h3>
+<ul>
+<% @cafe.openings do |o| %>
+	<% binding.pry %> 
+	<% if o.status == 'close' %>
+		<li><%= o.day %></li>
+	<% end %>
+<% end %>
+</ul>
+<br><br>
+
 <h3>Users who are visiting this Cafe: <%= @visitors.count %></h3>
+	<% @visitors.each do |u| %>
+		<%= link_to user_visits_path(u.slug) do %>
+			<div class='cafetilesmall'>
+					<b><%= capitalize_each_word(u.name) %></b>
+					<text style='font-size:10px;color: darkgrey;'><%= Visit.by_user_and_cafe(u, @cafe).first.last_visited %></text>
+			</div>
+		<% end %>
+	<% end %>
+
 <h3>Users who are visiting this Cafe today: <%= @visitors_today.count %></h3>
+	<% @visitors_today.each do |u| %>
+		<%= link_to user_visits_path(u) do %>
+			<div class='cafetilesmall'>
+					<b><%= capitalize_each_word(u.name) %></b>
+			</div>
+		<% end %>
+	<% end %>
+
