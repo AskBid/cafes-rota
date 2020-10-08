@@ -4,12 +4,12 @@
 		<% if Visit.by_user_and_cafe(current_user, @cafe).count > 0 %>
 			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
 				<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
-				<%= submit_tag "DELETE", class: 'add' %>
+				<%= submit_tag "DELETE Visit", class: 'btn_cafe_show' %>
 			<% end %>
 		<% else %>
 			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
 				<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
-				<%= submit_tag "+", class: 'add' %>
+				<%= submit_tag "ADD Visit", class: 'btn_cafe_show' %>
 			<% end %>
 		<% end %>
 	</div>
