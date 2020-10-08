@@ -19,6 +19,10 @@ class Cafe < ApplicationRecord
 	scope :open, -> (wday) {joins(:openings).where("day = ? AND status = 'open'", wday)}
 	scope :by_location, -> (location) {where("location = ?", location)}
 
+	def open?(wday)
+		Cafe.open(wday).include?(self)
+	end
+
 	def location_prep
 		self.location = self.location.downcase.gsub(' ','-')
 	end

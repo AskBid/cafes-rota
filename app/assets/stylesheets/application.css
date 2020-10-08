@@ -124,6 +124,22 @@ input[type="submit"].add  {
   display: table;
 }
 
+div.add  {
+  border: none;
+  font-size: 20px;
+  color: darkgrey;
+  background-color: black;
+  border-radius: 5px;
+  height: 100%;
+  width: 60px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+  display: table;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
 input[type="submit"].add:hover {
   color: white;
   background-color: orange;
