@@ -1,1 +1,5 @@
-<h1>Show Cafe</h1>
+<h1><%= capitalize_each_word(@cafe.name) %></h1>
+<div><text  class='location'><%= capitalize_each_word(@cafe.location) %></text></div>
+<br><br>
+<h3>Users who are visiting this Cafe: <%= @visitors.count %></h3>
+<h3>Users who are visiting this Cafe today: <%= @visitors_today.count %></h3>

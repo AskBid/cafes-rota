@@ -20,6 +20,8 @@ class CafesController < ApplicationController
 
 	def show
 		@cafe = Cafe.find_by_slug(params[:slug])
+		@visitors = User.visiting_cafe(@cafe.id)
+		@visitors_today = User.visiting_cafe(@cafe.id).visiting_today(Date.today)
 	end
 
 	def location
