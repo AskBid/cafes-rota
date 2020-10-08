@@ -7,9 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 u1 = User.new(name: 'sergio', email: 'sergio@sergio.it', password: "pw")
-u2 = User.new(name: 'mario', email: 'mario@mario.it', password: "pw")
+u2 = User.new(name: 'mario', email: 'mail@mail.it', password: "pw")
+u3 = User.new(name: 'bob', email: 'mail@mail.it', password: "pw")
+u4 = User.new(name: 'em', email: 'mail@mail.it', password: "pw")
+u5 = User.new(name: 'jemelle', email: 'mail@mail.it', password: "pw")
+u6 = User.new(name: 'toks', email: 'mail@mail.it', password: "pw")
+u7 = User.new(name: 'mara', email: 'mail@mail.it', password: "pw")
+u8 = User.new(name: 'ale', email: 'mail@mail.it', password: "pw")
+u9 = User.new(name: 'ilam', email: 'mail@mail.it', password: "pw")
 
-cafe1 = Cafe.new(name: 'Clean Heart Cafe', location: 'Whitechapel')
+cafe1 = Cafe.new(name: 'Clean Heart Cafe', location: 'Whitechapel', location_url: "https://goo.gl/maps/XG5URR3HhGaVN2URA")
 cafe1.links.build(name: 'website', url: 'https://www.cleanheartscafe.co.uk/')
 cafe1.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/clean-hearts-cafe/')
 cafe1.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/04/IMG-0765-compressed-scaled.jpg')
@@ -45,7 +52,7 @@ cafe4.openings.build(day: 'friday', status: 'open')
 cafe4.openings.build(day: 'saturday', status: 'open')
 cafe4.openings.build(day: 'sunday', status: 'open')
 
-cafe5 = Cafe.new(name: 'Indigo Hotel', location: "Earl's Court")
+cafe5 = Cafe.new(name: 'Indigo Hotel', location: "Earl's Court", location_url: "https://goo.gl/maps/2Q9Ykxd3EAdP6Dbk8")
 cafe5.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/indigo-hotel/')
 cafe5.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2020/03/Indigo-Hotel-workspace.jpg')
 cafe5.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2020/03/Indigo-Hotel-main-working-table-1.jpg')
@@ -88,7 +95,7 @@ cafe7.openings.build(day: 'friday', status: 'open')
 cafe7.openings.build(day: 'saturday', status: 'close')
 cafe7.openings.build(day: 'sunday', status: 'close')
 
-cafe8 = Cafe.new(name: 'Hanbury Hall', location: "Shoreditch")
+cafe8 = Cafe.new(name: 'Hanbury Hall', location: "Shoreditch", location_url: "https://goo.gl/maps/pjjr84ypGUL1AraX7")
 cafe8.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/hanbury-hall/')
 cafe8.links.build(name: 'website', url: 'http://www.spitalfieldsvenue.org/venue-hire/hanbury-hall/')
 cafe8.images.build(name: 'google', url: 'https://lh5.googleusercontent.com/p/AF1QipM82UlT1UQwqOh10MnuaqW14Hqswe7GP9TyclkA=s773-k-no')
@@ -105,7 +112,7 @@ cafe8.openings.build(day: 'friday', status: 'open')
 cafe8.openings.build(day: 'saturday', status: 'open')
 cafe8.openings.build(day: 'sunday', status: 'open')
 
-cafe9 = Cafe.new(name: 'Cafe in the Crypt', location: "Shoreditch")
+cafe9 = Cafe.new(name: 'Cafe in the Crypt', location: "Shoreditch", location_url: "https://goo.gl/maps/YxMcWUJSq81CYnjXA")
 cafe9.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/cafe-in-the-crypt/')
 cafe9.links.build(name: 'website', url: 'https://www.stmartin-in-the-fields.org/visit/cafe-in-the-crypt/')
 cafe9.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2020/02/the-Crypt-bar-table.jpg')
@@ -119,7 +126,7 @@ cafe9.openings.build(day: 'friday', status: 'open')
 cafe9.openings.build(day: 'saturday', status: 'open')
 cafe9.openings.build(day: 'sunday', status: 'close')
 
-cafe10 = Cafe.new(name: 'JOVA London', location: "Baker Street")
+cafe10 = Cafe.new(name: 'JOVA London', location: "Baker Street", location_url: "https://goo.gl/maps/jCDbaG7SSQ6DqKa38")
 cafe10.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/jova-london-free-workspace/')
 cafe10.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/08/Jova-hero-main-NEW-scaled.jpg')
 cafe10.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/07/Jova-cafe-area-scaled.jpg')
@@ -132,7 +139,7 @@ cafe10.openings.build(day: 'friday', status: 'open')
 cafe10.openings.build(day: 'saturday', status: 'open')
 cafe10.openings.build(day: 'sunday', status: 'open')
 
-cafe11 = Cafe.new(name: 'The Hydrant', location: "Monument")
+cafe11 = Cafe.new(name: 'The Hydrant', location: "Monument", location_url: "")
 cafe11.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/the-hydrant/')
 cafe11.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/10/Hydrant-semi-private-booth-scaled.jpg')
 cafe11.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/10/Hydrant-Main-space-with-meeting-room-scaled.jpg')
@@ -145,7 +152,7 @@ cafe11.openings.build(day: 'friday', status: 'open')
 cafe11.openings.build(day: 'saturday', status: 'close')
 cafe11.openings.build(day: 'sunday', status: 'close')
 
-cafe12 = Cafe.new(name: 'Village Paddignton', location: "Paddignton")
+cafe12 = Cafe.new(name: 'Village Paddignton', location: "Paddignton", location_url: "https://g.page/TheVillagePaddington?share")
 cafe12.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/village-paddington/')
 cafe12.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/12/Village-Paddington-sofa-area.jpg')
 cafe12.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/12/Village-Paddington-chess-area-scaled.jpg')
@@ -159,7 +166,7 @@ cafe12.openings.build(day: 'friday', status: 'open')
 cafe12.openings.build(day: 'saturday', status: 'open')
 cafe12.openings.build(day: 'sunday', status: 'open')
 
-cafe13 = Cafe.new(name: 'The Lodge', location: "Surrey Quays")
+cafe13 = Cafe.new(name: 'The Lodge', location: "Surrey Quays", location_url: "https://goo.gl/maps/B9jr2GaRrGWrEee27")
 cafe13.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/the-lodge-space/')
 cafe13.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/08/The-lodge-main-space.jpg')
 cafe13.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/08/The-Lodge-scaled.jpg')
@@ -171,7 +178,7 @@ cafe13.openings.build(day: 'friday', status: 'open')
 cafe13.openings.build(day: 'saturday', status: 'close')
 cafe13.openings.build(day: 'sunday', status: 'close')
 
-cafe14 = Cafe.new(name: 'The Schoolhouse', location: "Clapham Junction")
+cafe14 = Cafe.new(name: 'The Schoolhouse', location: "Clapham Junction", location_url: "https://g.page/theschoolhouselondon?share")
 cafe14.links.build(name: 'wecoffe', url: 'https://wecoffee.io/listing/the-schoolhouse/')
 cafe14.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/01/The-Schoolhouse-2-scaled.jpg')
 cafe14.images.build(name: 'wecoffe', url: 'https://wecoffee.io/wp-content/uploads/2019/01/10765585264_IMG_9055-1.jpg')
@@ -199,7 +206,7 @@ cafe15.openings.build(day: 'friday', status: 'open')
 cafe15.openings.build(day: 'saturday', status: 'open')
 cafe15.openings.build(day: 'sunday', status: 'open')
 
-cafe16 = Cafe.new(name: 'Always Closed Cafe', location: "DreamLand")
+cafe16 = Cafe.new(name: 'Always Closed Cafe', location: "DreamLand", location_url: "https://goo.gl/maps/UjHDT4qyCzKQDujs6")
 cafe16.links.build(name: 'wecoffe', url: 'https://cafeofyourdreams.com/')
 cafe16.images.build(name: 'wecoffe', url: 'https://media-cdn.tripadvisor.com/media/photo-s/19/f1/5a/40/ph-cafe-psychedelic-hues.jpg')
 cafe16.openings.build(day: 'monday', status: 'close')
@@ -225,7 +232,19 @@ cafe14.save
 cafe15.save
 cafe16.save
 
-u1.cafes << [cafe3, cafe1]
+u1.cafes << [cafe3, cafe1, cafe6, cafe12, cafe15, cafe8]
+u2.cafes << [cafe2, cafe1, cafe6, cafe9, cafe12, cafe4]
+u3.cafes << [cafe7, cafe1, cafe6, cafe8, cafe15, cafe2, cafe13]
+u4.cafes << [cafe13, cafe1, cafe6, cafe10, cafe4, cafe9]
+u5.cafes << [cafe3, cafe1, cafe6, cafe13, cafe5, cafe4, cafe11]
+u6.cafes << [cafe3, cafe1, cafe6, cafe13, cafe14, cafe5, cafe16]
+u7.cafes << [cafe7, cafe1, cafe6, cafe8, cafe15, cafe2, cafe13, cafe4]
+u8.cafes << [cafe3, cafe1, cafe6, cafe13, cafe14, cafe5, cafe16]
+u9.cafes << [cafe3, cafe1, cafe6, cafe12, cafe15, cafe8, cafe7, cafe16]
 
 u1.save
 u2.save
+u3.save
+u4.save
+u5.save
+u6.save
