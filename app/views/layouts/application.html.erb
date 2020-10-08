@@ -24,11 +24,6 @@
           <div>
             <%= link_to 'Visits', user_visits_path(current_user.slug) %>
           </div>
-          <div> | </div>
-          <div>
-            <%= link_to 'Profile', user_path(current_user.slug) %>
-          </div>
-          <div> | </div>
           <div id='log'>
             <%= link_to 'Logout', logout_path, :method => 'delete' %>
           </div>
