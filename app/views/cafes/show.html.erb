@@ -1,4 +1,19 @@
-<h1><%= capitalize_each_word(@cafe.name) %></h1>
+<h1 style="display:inline-block;"><%= capitalize_each_word(@cafe.name) %></h1>
+<% if user_is_authenticated %>
+	<div style="display:inline-block;">
+		<% if Visit.by_user_and_cafe(current_user, @cafe).count > 0 %>
+			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
+				<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
+				<%= submit_tag "DELETE", class: 'add' %>
+			<% end %>
+		<% else %>
+			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
+				<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
+				<%= submit_tag "+", class: 'add' %>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>
 <div><%= link_to capitalize_each_word(@cafe.location), @cafe.location_url, class: 'location' %></div>
 <br><br>
 
@@ -17,7 +32,7 @@
 	<% end %>
 <% end %>
 </ul>
-<br><br>
+<br>
 
 <h3>Users who are visiting this Cafe: <%= @visitors.count %></h3>
 	<% @visitors.each do |u| %>
