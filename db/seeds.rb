@@ -254,3 +254,6 @@ u3.save
 u4.save
 u5.save
 u6.save
+u7.save
+u8.save
+u9.save
