@@ -242,6 +242,12 @@ u7.cafes << [cafe7, cafe1, cafe6, cafe8, cafe15, cafe2, cafe13, cafe4]
 u8.cafes << [cafe3, cafe1, cafe6, cafe13, cafe14, cafe5, cafe16]
 u9.cafes << [cafe3, cafe1, cafe6, cafe12, cafe15, cafe8, cafe7, cafe16]
 
+[u1, u2, u3, u4, u5, u6, u7, u8, u9].each do |u|
+	u.visits.each do |v|
+		v.last_visited = "2020.#{rand(1..9)}.#{rand(1..29)}"
+	end
+end
+
 u1.save
 u2.save
 u3.save
