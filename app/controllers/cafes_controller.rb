@@ -24,8 +24,8 @@ class CafesController < ApplicationController
 
 	def location
 		@location = params[:location]
-		@open_cafes = Cafe.open(today).by_location(@location)
-		@cafes_location = Cafe.by_location(@location)
+		# @open_cafes = Cafe.open(today).by_location(@location)
+		@cafes = Cafe.by_location(@location)
 		
 		render '/location'
 	end
