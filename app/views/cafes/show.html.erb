@@ -40,23 +40,27 @@
 		<br>
 
 		<h3>Users who are visiting this Cafe: <%= @visitors.count %></h3>
-			<% @visitors.each do |u| %>
-				<%= link_to user_visits_path(u.slug) do %>
-					<div class='cafetilesmall'>
-							<b><%= capitalize_each_word(u.name) %></b>
-							<text style='font-size:10px;color: darkgrey;'><%= Visit.by_user_and_cafe(u, @cafe).first.last_visited %></text>
-					</div>
+			<div class='cafestable_summary'>
+				<% @visitors.each do |u| %>
+					<%= link_to user_visits_path(u.slug) do %>
+						<div class='cafetilesmall'>
+								<b><%= capitalize_each_word(u.name) %></b>
+								<text style='font-size:10px;color: darkgrey;'><%= Visit.by_user_and_cafe(u, @cafe).first.last_visited %></text>
+						</div>
+					<% end %>
 				<% end %>
-			<% end %>
+			</div>
 
 		<h3>Users who are visiting this Cafe today: <%= @visitors_today.count %></h3>
-			<% @visitors_today.each do |u| %>
-				<%= link_to user_visits_path(u) do %>
-					<div class='cafetilesmall'>
-							<b><%= capitalize_each_word(u.name) %></b>
-					</div>
+			<div class='cafestable_summary'>
+				<% @visitors_today.each do |u| %>
+					<%= link_to user_visits_path(u) do %>
+						<div class='cafetilesmall'>
+								<b><%= capitalize_each_word(u.name) %></b>
+						</div>
+					<% end %>
 				<% end %>
-			<% end %>
+			</div>
 	</div>
 	<div>
 		<div class='container'><p><%= @cafe.description %></p></div>
