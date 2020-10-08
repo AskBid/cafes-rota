@@ -32,6 +32,12 @@ class VisitsController < ApplicationController
     redirect_to user_visits_path(visit.user.slug)
   end
 
+  def destroy
+    visit = Visit.find(visit_params[:id])
+    visit.delete
+    redirect_to cafe_path(this_cafe.slug)
+  end
+
   private
 
   def this_user
