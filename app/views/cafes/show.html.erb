@@ -1,56 +1,73 @@
-<h1 style="display:inline-block;"><%= capitalize_each_word(@cafe.name) %></h1>
-<% if user_is_authenticated %>
-	<div style="display:inline-block;">
-		<% if @visit %>
-			<%= form_tag(visit_path(@visit), method: "delete") do %>
-				<%= hidden_field_tag('visit[id]', value = @visit.id) %>
-				<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
-				<%= submit_tag "DELETE Visit", class: 'btn_cafe_show' %>
-			<% end %>
-		<% else %>
-			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
-				<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
-				<%= submit_tag "ADD Visit", class: 'btn_cafe_show' %>
+
+<div class='cafeshow'>
+	<div>
+		<h1 style="display:inline-block;"><%= capitalize_each_word(@cafe.name) %></h1>
+		<% if user_is_authenticated %>
+			<div style="display:inline-block;width:20px"></div>
+			<div style="display:inline-block;">
+				<% if @visit %>
+					<%= form_tag(visit_path(@visit), method: "delete") do %>
+						<%= hidden_field_tag('visit[id]', value = @visit.id) %>
+						<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
+						<%= submit_tag "DELETE Visit", class: 'btn_cafe_show' %>
+					<% end %>
+				<% else %>
+					<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
+						<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
+						<%= submit_tag "ADD Visit", class: 'btn_cafe_show' %>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+		<div><%= link_to capitalize_each_word(@cafe.location), @cafe.location_url, class: 'location' %></div>
+		<br><br>
+
+		<h3>Links:</h3>
+		<ul>
+		<% @cafe.links.each do |link| %>
+			<li><%= link_to link.name, link.url %></li>
+		<% end %>
+		</ul>
+
+		<h3>Closed on:</h3>
+		<ul>
+		<% @cafe.openings.each do |o| %>
+			<% if o.status == 'close' %>
+				<li><%= o.day %></li>
 			<% end %>
 		<% end %>
+		</ul>
+		<br>
+
+		<h3>Users who are visiting this Cafe: <%= @visitors.count %></h3>
+			<% @visitors.each do |u| %>
+				<%= link_to user_visits_path(u.slug) do %>
+					<div class='cafetilesmall'>
+							<b><%= capitalize_each_word(u.name) %></b>
+							<text style='font-size:10px;color: darkgrey;'><%= Visit.by_user_and_cafe(u, @cafe).first.last_visited %></text>
+					</div>
+				<% end %>
+			<% end %>
+
+		<h3>Users who are visiting this Cafe today: <%= @visitors_today.count %></h3>
+			<% @visitors_today.each do |u| %>
+				<%= link_to user_visits_path(u) do %>
+					<div class='cafetilesmall'>
+							<b><%= capitalize_each_word(u.name) %></b>
+					</div>
+				<% end %>
+			<% end %>
 	</div>
-<% end %>
-<div><%= link_to capitalize_each_word(@cafe.location), @cafe.location_url, class: 'location' %></div>
-<br><br>
+	<div>
+		<div class='container'><p><%= @cafe.description %></p></div>
+		<div class='container'>
+			<% @cafe.images.each do |img| %>
+				<%= link_to img.url do %>
+				<%= image_tag(img.url, alt: img.name , class: 'small_img') %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
 
-<h3>Links:</h3>
-<ul>
-<% @cafe.links.each do |link| %>
-	<li><%= link_to link.name, link.url %></li>
-<% end %>
-</ul>
-
-<h3>Closed on:</h3>
-<ul>
-<% @cafe.openings.each do |o| %>
-	<% if o.status == 'close' %>
-		<li><%= o.day %></li>
-	<% end %>
-<% end %>
-</ul>
-<br>
-
-<h3>Users who are visiting this Cafe: <%= @visitors.count %></h3>
-	<% @visitors.each do |u| %>
-		<%= link_to user_visits_path(u.slug) do %>
-			<div class='cafetilesmall'>
-					<b><%= capitalize_each_word(u.name) %></b>
-					<text style='font-size:10px;color: darkgrey;'><%= Visit.by_user_and_cafe(u, @cafe).first.last_visited %></text>
-			</div>
-		<% end %>
-	<% end %>
-
-<h3>Users who are visiting this Cafe today: <%= @visitors_today.count %></h3>
-	<% @visitors_today.each do |u| %>
-		<%= link_to user_visits_path(u) do %>
-			<div class='cafetilesmall'>
-					<b><%= capitalize_each_word(u.name) %></b>
-			</div>
-		<% end %>
-	<% end %>
 
