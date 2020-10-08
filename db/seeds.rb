@@ -233,12 +233,12 @@ cafe15.save
 cafe16.save
 
 u1.cafes << [cafe3, cafe1, cafe6, cafe12, cafe15, cafe8]
-u2.cafes << [cafe2, cafe1, cafe6, cafe9, cafe12, cafe4]
-u3.cafes << [cafe7, cafe1, cafe6, cafe8, cafe15, cafe2, cafe13]
+u2.cafes << [cafe3, cafe1, cafe6, cafe9, cafe12, cafe4]
+u3.cafes << [cafe7, cafe1, cafe6, cafe8, cafe15, cafe13]
 u4.cafes << [cafe13, cafe1, cafe6, cafe10, cafe4, cafe9]
 u5.cafes << [cafe3, cafe1, cafe6, cafe13, cafe5, cafe4, cafe11]
 u6.cafes << [cafe3, cafe1, cafe6, cafe13, cafe14, cafe5, cafe16]
-u7.cafes << [cafe7, cafe1, cafe6, cafe8, cafe15, cafe2, cafe13, cafe4]
+u7.cafes << [cafe7, cafe1, cafe6, cafe8, cafe15, cafe12, cafe13, cafe4]
 u8.cafes << [cafe3, cafe1, cafe6, cafe13, cafe14, cafe5, cafe16]
 u9.cafes << [cafe3, cafe1, cafe6, cafe12, cafe15, cafe8, cafe7, cafe16]
 
