@@ -14,11 +14,11 @@ Rails.application.routes.draw do
 	get '/:location/cafes', to: 'cafes#location', as: 'location_cafes'
 
   resources :cafes, param: :slug
-  resources :notes
-  resources :visits, only: [:index, :update, :edit]
+  # resources :notes
+  resources :visits, only: [:update, :edit, :destroy]
   resources :users, param: :slug do
 		resources :cafes, only: [:index]
-		resources :visits, only: [:index, :new, :create]  	
+		resources :visits, only: [:index, :new, :create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

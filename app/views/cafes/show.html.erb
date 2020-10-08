@@ -1,9 +1,9 @@
 <h1 style="display:inline-block;"><%= capitalize_each_word(@cafe.name) %></h1>
 <% if user_is_authenticated %>
 	<div style="display:inline-block;">
-		<% if Visit.by_user_and_cafe(current_user, @cafe).count > 0 %>
-			<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
-				<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
+		<% if @visit.count > 0 %>
+			<%= form_tag(visit_path(visit), method: "delete") do %>
+				<%= hidden_field_tag('visit[id]', value = @visit.id) %>
 				<%= submit_tag "DELETE Visit", class: 'btn_cafe_show' %>
 			<% end %>
 		<% else %>
