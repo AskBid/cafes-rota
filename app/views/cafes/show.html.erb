@@ -4,16 +4,14 @@
 
 <h3>Links:</h3>
 <ul>
-<% @cafe.links do |link| %>
-	<% binding.pry %> 
-	<li><%= link_to "#{@cafe.name} #{link.name}", link.url %></li>
+<% @cafe.links.each do |link| %>
+	<li><%= link_to link.name, link.url %></li>
 <% end %>
 </ul>
 
 <h3>Closed on:</h3>
 <ul>
-<% @cafe.openings do |o| %>
-	<% binding.pry %> 
+<% @cafe.openings.each do |o| %>
 	<% if o.status == 'close' %>
 		<li><%= o.day %></li>
 	<% end %>
