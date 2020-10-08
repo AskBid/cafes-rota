@@ -6,7 +6,7 @@
 <br>
 <u>
 	<% if user_is_authenticated %>
-		<%= link_to "Let's choose today's cafe!", user_path(current_user.slug) %>
+		<%= link_to "Let's choose today's cafe!", user_visits_path(current_user.slug) %>
 	<% else %>
 		<%= link_to "Let's choose today's cafe!", login_path %>
 	<% end %>

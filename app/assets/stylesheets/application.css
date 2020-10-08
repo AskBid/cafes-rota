@@ -110,7 +110,7 @@ p b {
 	padding: 10px 5px 0px 20px;
 }
 
-input[type="submit"].add  {
+input[type="submit"].add {
   border: none;
   font-size: 20px;
   color: darkgrey;
@@ -124,20 +124,26 @@ input[type="submit"].add  {
   display: table;
 }
 
-div.add  {
+div.close {
   border: none;
   font-size: 20px;
   color: darkgrey;
-  background-color: black;
+  background-color: #555;
   border-radius: 5px;
   height: 100%;
   width: 60px;
   vertical-align: middle;
   text-align: center;
-  padding: 0;
+  padding: 0px;
   display: table;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+div.close text{
+  
 }
 
 input[type="submit"].add:hover {
