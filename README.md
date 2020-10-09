@@ -1,78 +1,32 @@
 
-- User sign up
-- User logs in
+# Doubtful Delegator
 
-	- get: /cafes/
+Cafe Rota helps you scatter over time the visits to your favourites cafes. 
+The User can select from a directory of Cafes and keep track of the last time they visited such cafes.
+When the User need to visit a Cafe he can look to a list where the Cafes he hasn't visited for longer will appear first.
 
-			- get: /cafes/:id, cafes#show  >> shows cafes/:id/images, cafes/:id/links, cafes/:id/timings
-				-  get: cafes/:id/images, images#index  ?? do I need?
-				-  get: cafes/:id/timings, timings#index  ?? do I need?
+## Installation
+Prerequisite: you have `ruby`and `rails`
 
-			- get: cafes/:id/edit, cafes#edit  >> nested_attributes :links, :images, :timings
+Clone the gihub repository locally.
 
-			- get: /cafes/new, cafes#new   >> nested_attributes :links, :images, :timings  
+	$ git clone git@github.com:AskBid/cafes-rota.git
 
-			- post: /cafes/create, cafes#create         
-			- delete: /cafes/create, cafes#delete    
+once in the project directory, install all the dependecies by executing:
 
-	- get: /user/:id, users#show  >> show details of a user and his cafes and edit button
+	$ bundle install
 
-		- get: /user/:id/edit 
+install and seed the given database for trial usage
 
-		- patch: /user/:id/
+	$ rake db:migrate
+	$ rake db:seed
 
-		<!-- - get: /users/:id/cafes/new, cafes#new  >> like '/cafes/new' but it will directly add the cafe to user's cafe -->
+start `rails server` and join from the homepage
 
-		- get: /users/:id/visits, visits#index >> shows list of all cafes to pick from
+## Contributing
 
-		- get: /users/:id/visits/new, visits#new
+Bug reports and pull requests are welcome on GitHub at https://github.com/AskBid/cafes-rota. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
-		- post: /visits, visits#create, visits#delete
- 
-		- path: /visits/:id,  visits#update  >> updates user last visit time
+## License
 
-		- delete: visits/:id, visits#delete
-
-
-
-
-
-
-
-today: 30/07
-
-----list
-cafe4, visited: 17/03, skip_on: null
-cafe3, visited: 29/05, skip_on: null
-cafe1, visited: 30/06, skip_on: null 
-cafe0, visited: 30/06, skip_on: null
-----list
-action: skip!
-
-----list
-cafe3, visited: 29/05, skip_on: null
-cafe1, visited: 30/06, skip_on: null
-cafe0, visited: 30/06, skip_on: null
-----list
-----out
-cafe4, visited: 17/03, skip_on: 30/07
-----out
-action: visit!
-
-today: 31/07
-
-----list
-cafe4, visited: 17/03, skip_on: 30/07
-cafe0, visited: 30/06, skip_on: null
-cafe1, visited: 30/06, skip_on: null
-cafe3, visited: 30/07, skip_on: null
-----list
-action: visit!
-
-----list
-cafe4, visited: 17/03, skip_on: 30/07
-cafe0, visited: 30/06, skip_on: null
-cafe1, visited: 30/06, skip_on: null
-cafe3, visited: 30/07, skip_on: null
-----list
-action: visit!
+The repository is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT)
