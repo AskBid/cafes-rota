@@ -1,5 +1,5 @@
 
-# Doubtful Delegator
+# Cafe Rota
 
 Cafe Rota helps you scatter over time the visits to your favourites cafes. 
 The User can select from a directory of Cafes and keep track of the last time they visited such cafes.
