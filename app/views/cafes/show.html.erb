@@ -2,6 +2,7 @@
 <div class='cafeshow'>
 	<div>
 		<h1 style="display:inline-block;"><%= capitalize_each_word(@cafe.name) %></h1>
+		
 		<% if user_is_authenticated %>
 			<div style="display:inline-block;width:20px"></div>
 			<div style="display:inline-block;">
@@ -19,6 +20,7 @@
 				<% end %>
 			</div>
 		<% end %>
+
 		<div><%= link_to capitalize_each_word(@cafe.location), @cafe.location_url, class: 'location' %></div>
 		<br><br>
 
