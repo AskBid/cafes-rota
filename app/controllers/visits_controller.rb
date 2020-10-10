@@ -12,6 +12,7 @@ class VisitsController < ApplicationController
 
   def create
     user = this_user
+    binding.pry
     user.cafes << this_cafe
     
     redirect_to new_user_visit_path(user.slug)

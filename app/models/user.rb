@@ -19,7 +19,6 @@ class User < ApplicationRecord
 	before_save :downcase_name
 
 	scope :visiting_cafe, -> (cafe_id) {joins(:visits).where('cafe_id = ?', cafe_id)}
-
 	scope :visiting_today, -> (todays_date) {joins(:visits).where('last_visited = ?', todays_date)}
 
 	def self.from_omniauth(response)
@@ -35,4 +34,8 @@ class User < ApplicationRecord
 		my_cafes = self.cafes
 		all_cafes - my_cafes
 	end
+
+	def to_param  # overridden
+    slug
+  end
 end
