@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # resources :notes
   resources :visits, only: [:update, :edit, :destroy]
   resources :users, param: :slug do
-		resources :cafes, only: [:index]
+		# resources :cafes, only: [:index]
 		resources :visits, only: [:index, :new, :create]
   end
 end
