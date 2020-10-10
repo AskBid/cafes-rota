@@ -22,7 +22,7 @@ class CafesController < ApplicationController
 		@cafe = Cafe.find_by_slug(params[:slug])
 		@visitors = User.visiting_cafe(@cafe.id)
 		@visitors_today = User.visiting_cafe(@cafe.id).visiting_today(Date.today)
-		@visit = Visit.by_user_and_cafe(current_user, @cafe).first
+		@visit = Visit.by_user_and_cafe(current_user, @cafe).first if user_is_authenticated
 	end
 
 	def location
