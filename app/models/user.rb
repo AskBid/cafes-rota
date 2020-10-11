@@ -12,6 +12,7 @@ class User < ApplicationRecord
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
 	validates :name, presence: { message: "%{attribute} must be given" }
 	validates :email, presence: { message: "%{attribute} must be given" }
+	validates_uniqueness_of :email, presence: { message: "%{attribute} is alredy registered" }
   validates :password, on: create,
   	presence: {message: 'You must enter a password'},
 		length: {minimum: 2, message: 'Your password must contain at least 2 characters'}

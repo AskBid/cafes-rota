@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 		user = User.from_omniauth(auth)
 		if user.valid?
 			session[:user_id] = user.id
-			redirect_to user_path(user.slug)
+			redirect_to user_visits_path(user.slug)
 		else
 			flash[:alert] = user.errors.messages.map {|k, m| m}
 			redirect_to login_path
