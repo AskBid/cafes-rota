@@ -15,7 +15,7 @@
 				<% else %>
 					<%= form_tag(user_visits_path(current_user.slug), method: "post") do %>
 						<%= hidden_field_tag('visit[cafe_id]', value = @cafe.id) %>
-						<%= submit_tag "ADD Visit", class: 'btn_cafe_show' %>
+						<span><%= submit_tag "ADD Visit", class: 'btn_cafe_show' %></span>
 					<% end %>
 				<% end %>
 			</div>
@@ -65,7 +65,10 @@
 			</div>
 	</div>
 	<div>
-		<div class='container'><p><%= @cafe.description %></p></div>
+		<div class='container'>
+			<p style="font-size:10px;color: darkgrey;"> description: <p>
+			<p><%= @cafe.description %></p>
+		</div>
 		<div class='container'>
 			<% @cafe.images.each do |img| %>
 				<%= link_to img.url do %>

@@ -176,6 +176,13 @@ input[type="submit"].btn_cafe_show:hover {
   cursor:pointer;
 }
 
+span input[type="submit"].btn_cafe_show:hover {
+  color: white;
+  background-color:  #00cc66;
+  border-radius: 10px;
+  cursor:pointer;
+}
+
 
 div.close {
   border: none;
