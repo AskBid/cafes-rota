@@ -13,11 +13,11 @@ Rails.application.routes.draw do
 
 	get '/:location/cafes', to: 'cafes#location', as: 'location_cafes'
 
-  resources :cafes, param: :slug
-  # resources :notes
+  resources :cafes, param: :slug do
+  	resources :notes, shallow: true
+	end
   resources :visits, only: [:update, :edit, :destroy]
   resources :users, param: :slug do
-		# resources :cafes, only: [:index]
 		resources :visits, only: [:index, :new, :create]
   end
 end
