@@ -21,13 +21,13 @@
 			</div>
 		<% end %>
 
-		<div><%= link_to capitalize_each_word(@cafe.location), @cafe.location_url, class: 'location' %></div>
+		<div><%= link_to capitalize_each_word(@cafe.location), @cafe.location_url, class: 'location_normal_link' %></div>
 		<br><br>
 
 		<h3>Links:</h3>
 		<ul>
 		<% @cafe.links.each do |link| %>
-			<li><%= link_to link.name, link.url %></li>
+			<li><%= link_to link.name, link.url, class: 'normal_link' %></li>
 		<% end %>
 		</ul>
 
@@ -72,6 +72,9 @@
 				<%= image_tag(img.url, alt: img.name , class: 'small_img') %>
 				<% end %>
 			<% end %>
+		</div>
+		<div class='container'>
+			<%= link_to "#{capitalize_each_word(@cafe.name)}'s Notes", cafe_notes_path(@cafe), class: 'normal_link' %>
 		</div>
 	</div>
 </div>
