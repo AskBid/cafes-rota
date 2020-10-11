@@ -77,7 +77,7 @@
 			<% end %>
 		</div>
 		<div class='container'>
-			<%= link_to "#{capitalize_each_word(@cafe.name)}'s Notes", cafe_notes_path(@cafe), class: 'normal_link' %>
+			<%= link_to "#{capitalize_each_word(@cafe.name)}'s Notes", cafe_notes_path(@cafe.slug), class: 'normal_link' %>
 		</div>
 	</div>
 </div>
