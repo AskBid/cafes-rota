@@ -7,12 +7,12 @@ class NotesController < ApplicationController
 
 	def new
 		@cafe = this_cafe
-		binding.pry
 		@note = @cafe.notes.build
 		@note.user = current_user
 	end
 
 	def create
+		binding.pry
 	end
 
 	private

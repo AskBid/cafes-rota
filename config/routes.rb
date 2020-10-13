@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
 	get '/:location/cafes', to: 'cafes#location', as: 'location_cafes'
 
+	resources :notes, only: [:create] 
+
   resources :cafes, param: :slug do
   	resources :notes, shallow: true
 	end
