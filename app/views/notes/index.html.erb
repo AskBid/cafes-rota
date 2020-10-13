@@ -1,8 +1,15 @@
-<h1><%= capitalize_each_word(@cafe.name) %> Notes index</h1>
-<%= link_to 'New Note', new_cafe_note_path(@cafe.slug), class: 'normal_link' %>
+<h1><%= link_to capitalize_each_word(@cafe.name), cafe_path(@cafe.slug) %> notes:</h1>
+		<div class='cafetile'>
+				<h3><%= link_to 'New Note ++', new_cafe_note_path(@cafe.slug), class: 'normal_link' %></h3>
+		</div>
 
 <% if !@notes.empty? %>
 	<% @notes.each do |n| %>
-		<p> <%= n.text %> </p>
+		<div class='container'>
+			<p> <%= capitalize_each_word(n.user.name) %> said: </p>
+			<p> <%= n.text %> </p>
+		</div>
 	<% end %>
+<% else %>
+	<p> There is not any notes for this cafe </p>
 <% end %>
