@@ -7,7 +7,11 @@ class VisitsController < ApplicationController
 
   def new
     @user = this_user
-  	@cafes = @user.missing_cafes
+    if user_is_authenticated && @user == current_user
+    	@cafes = @user.missing_cafes
+    else
+      redirect_to user_visits_path(@user.slug)
+    end
   end
 
   def create
