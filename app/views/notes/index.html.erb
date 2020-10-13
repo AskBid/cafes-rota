@@ -1,2 +1,8 @@
 <h1><%= capitalize_each_word(@cafe.name) %> Notes index</h1>
-<%= link_to 'New Note', new_cafe_note_path(@cafe.slug) %>
+<%= link_to 'New Note', new_cafe_note_path(@cafe.slug), class: 'normal_link' %>
+
+<% if !@notes.empty? %>
+	<% @notes.each do |n| %>
+		<p> <%= n.text %> </p>
+	<% end %>
+<% end %>

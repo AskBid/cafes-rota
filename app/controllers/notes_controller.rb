@@ -12,12 +12,19 @@ class NotesController < ApplicationController
 	end
 
 	def create
-		binding.pry
+		#find avoids duplicates
+		note = Note.find_or_create_by(note_params)
+
+		redirect_to cafe_notes_path(note.cafe.slug)
 	end
 
 	private
 
 	def this_cafe
 		Cafe.find_by_slug(params[:cafe_slug])
+	end
+
+	def note_params
+		params.require(:note).permit(:text, :cafe_id, :user_id)
 	end
 end

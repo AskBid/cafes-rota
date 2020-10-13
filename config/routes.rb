@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 	resources :notes, only: [:create] 
 
   resources :cafes, param: :slug do
-  	resources :notes, shallow: true
+  	resources :notes, only: [:index, :new]
 	end
 
   resources :visits, only: [:update, :edit, :destroy]
