@@ -1,5 +1,12 @@
 <h1>New Note:</h1>
 <p>(maximum 180 charcters)</p>
+<% if flash.any? %>
+	<ul>
+	  <% flash.alert.each do |message| %>
+	    <li class='flash'><%= message.first.to_s %></li>
+	  <% end %>
+	</ul>
+<% end %>
 
 <%= form_for @note do |f| %>
 	<%= f.text_area :text %>

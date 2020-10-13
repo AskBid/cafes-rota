@@ -6,16 +6,19 @@ class NotesController < ApplicationController
 	end
 
 	def new
-		@cafe = this_cafe
-		@note = @cafe.notes.build
+		cafe = this_cafe
+		@note = cafe.notes.build
 		@note.user = current_user
 	end
 
 	def create
-		#find avoids duplicates
-		note = Note.find_or_create_by(note_params)
-
-		redirect_to cafe_notes_path(note.cafe.slug)
+		@note = Note.new(note_params)
+		if @note.save
+			redirect_to cafe_notes_path(@note.cafe.slug)
+		else
+			flash[:alert] = @note.errors.messages.map {|k, m| m}
+			render 'new'
+		end
 	end
 
 	private
