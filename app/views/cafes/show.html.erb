@@ -27,7 +27,7 @@
 		<h3>Links:</h3>
 		<ul>
 		<% @cafe.links.each do |link| %>
-			<li><%= link_to link.name, link.url, class: 'normal_link' %></li>
+			<li><%= link_to link.name, link.url, class: 'normal_link', target: :_blank %></li>
 		<% end %>
 		</ul>
 
