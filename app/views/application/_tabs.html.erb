@@ -20,7 +20,7 @@
 			<% end %>
 		</div>
 
-		<% if user_is_authenticated && controller_name != 'cafes'%>
+		<% if user_is_authenticated && controller_name != 'cafes' && instance.user.id == current_user.id %>
 
 			<% if instance.class.to_s == 'Visit' %>
 				<% if cafe.open?(today) %> 

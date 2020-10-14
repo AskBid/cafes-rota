@@ -24,6 +24,12 @@ class VisitsController < ApplicationController
 
   def edit
     @visit = Visit.find_by(id: params.permit(:id)[:id].to_i)
+    if @visit.user == current_user
+      render 'edit'
+    else
+      flash[:errors] = "You cannot edit a visit that isn't yours"
+      redirect_to user_visits_path(@visit.user.slug)
+    end
   end
 
   def update
