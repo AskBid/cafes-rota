@@ -4,6 +4,11 @@
 
 <h1><%= capitalize_each_word(@user.name) %>'s visits:</h1>
 
+<% if !flash.empty? %>
+	<li class='flash'><%= flash[:errors]  %></li>
+<% end %>
+
+
 <%= link_to new_user_visit_path do %>
 	<div class='cafetile'>
 			<h3>Add a Cafe to Visit</h3>

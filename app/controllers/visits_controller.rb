@@ -10,6 +10,7 @@ class VisitsController < ApplicationController
     if user_is_authenticated && @user == current_user
     	@cafes = @user.missing_cafes
     else
+      flash[:errors] = 'You can not add Visits to this User'
       redirect_to user_visits_path(@user.slug)
     end
   end
