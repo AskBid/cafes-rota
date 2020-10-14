@@ -20,9 +20,9 @@
 			<% end %>
 		</div>
 
-		<% if user_is_authenticated && controller_name != 'cafes' && instance.user.id == current_user.id %>
+		<% if user_is_authenticated && controller_name != 'cafes'%>
 
-			<% if instance.class.to_s == 'Visit' %>
+			<% if instance.class.to_s == 'Visit'  && instance.user.id == current_user.id %>
 				<% if cafe.open?(today) %> 
 					<%= form_tag(visit_path(instance), method: "patch") do %>
 						<%= hidden_field_tag('visit[id]', value = instance.id) %>
