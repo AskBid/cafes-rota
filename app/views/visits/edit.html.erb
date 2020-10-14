@@ -1,10 +1,15 @@
 <h1>Edit Visit to <%= link_to @visit.cafe.name, cafe_path(@visit.cafe.slug) %>:</h1>
 
-<%= form_for(@visit) do |f| %>
-	<%= f.label :last_visited %>
-	<%= f.text_field :last_visited %>
-	<%= f.hidden_field :id %>
-	<br>
-	<br>
-	<%= f.submit 'Edit' %>
+<% if @visit.user == current_user %>
+	<%= form_for(@visit) do |f| %>
+		<%= f.label :last_visited %>
+		<%= f.text_field :last_visited %>
+		<%= f.hidden_field :id %>
+		<br>
+		<br>
+		<%= f.submit 'Edit' %>
+	<% end %>
+<% else %>
+	<li class='flash'>You can't edit a visit that isn't your</li>
+	<p><%= capitalize_each_word(@visit.user.name) %>'s Visit date: <%= @visit.last_visited %></p>
 <% end %>
