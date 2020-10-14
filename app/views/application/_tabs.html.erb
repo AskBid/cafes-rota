@@ -34,7 +34,6 @@
 				<% end %>
 
 			<% elsif instance.class.to_s == 'Cafe' %>
-				<% binding.pry %>
 				<%= form_for([current_user, instance.visits.build]) do |f| %>
 					<%= f.hidden_field :cafe_id %>
 					<%= f.submit "+", class: 'add' %>

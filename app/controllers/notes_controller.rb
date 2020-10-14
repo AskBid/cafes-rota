@@ -7,8 +7,12 @@ class NotesController < ApplicationController
 
 	def new
 		cafe = this_cafe
-		@note = cafe.notes.build
-		@note.user = current_user
+		if current_user
+			@note = cafe.notes.build
+			@note.user = current_user
+		else
+			redirect_to cafe_notes_path(cafe.slug)
+		end
 	end
 
 	def create
