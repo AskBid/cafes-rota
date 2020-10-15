@@ -15,7 +15,12 @@
 	<%= f.text_field :name %>
 	<br>
 	<%= f.label :location %>
-	<%= f.text_field :location %>
+	<%= f.text_field :location, list: 'location' %>
+  <datalist id="location">
+    <% Cafe.locations.each do |loc| %>
+      <option value="<%= loc %>"></option>
+    <% end %>
+  </datalist>
 	<br>
 	<%= f.label :location_url %>
 	<%= f.text_field :location_url %>

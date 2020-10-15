@@ -18,6 +18,7 @@ class Cafe < ApplicationRecord
 
 	scope :open, -> (wday) {joins(:openings).where("day = ? AND status = 'open'", wday)}
 	scope :by_location, -> (location) {where("location = ?", location)}
+	scope :locations, -> {select("DISTINCT location").map(&:location)}
 
 	def open?(wday)
 		Cafe.open(wday).include?(self)
