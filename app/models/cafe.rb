@@ -10,10 +10,11 @@ class Cafe < ApplicationRecord
 	has_many :openings
 
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
-	validates :name, presence: { message: "%{attribute} must be given" }
+	validates :name, presence: { message: "%{attribute} must be given 444" }
 	validate :cafe_has_image
 
 	before_save :downcase_name, :location_prep
+	after_initialize :populate_cafe_openings, :populate_new_cafe
 
 	accepts_nested_attributes_for :links, :images, :openings, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
 
@@ -34,13 +35,6 @@ class Cafe < ApplicationRecord
 	end
 
 	def populate_new_cafe(url_times: 3, img_times: 8)
-		self.openings.build(day: 'monday')
-		self.openings.build(day: 'tuesday')
-		self.openings.build(day: 'wednesday')
-		self.openings.build(day: 'thursday')
-		self.openings.build(day: 'friday')
-		self.openings.build(day: 'saturday')
-		self.openings.build(day: 'sunday')
 
 		self.links.build(name: 'website')
 
@@ -55,6 +49,16 @@ class Cafe < ApplicationRecord
 		img_times.times do 
 			self.images.build(name: 'other')
 		end
+	end
+
+	def populate_cafe_openings
+		self.openings.build(day: 'monday')
+		self.openings.build(day: 'tuesday')
+		self.openings.build(day: 'wednesday')
+		self.openings.build(day: 'thursday')
+		self.openings.build(day: 'friday')
+		self.openings.build(day: 'saturday')
+		self.openings.build(day: 'sunday')
 	end
 
 	def cafe_has_image

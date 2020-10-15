@@ -5,7 +5,7 @@ class CafesController < ApplicationController
 
 	def new
 		@cafe = Cafe.new
-		@cafe.populate_new_cafe
+		# @cafe.populate_new_cafe
 	end
 
 	def create
@@ -35,6 +35,14 @@ class CafesController < ApplicationController
 
 	def edit
 		@cafe = Cafe.find_by_slug(params[:slug])
+		@cafe.populate_new_cafe(url_times: 3, img_times: 3)
+	end
+
+	def update
+		@cafe = Cafe.find_by_slug(params[:slug])
+		@cafe.update(cafe_params)
+
+		redirect_to cafe_path(@cafe.slug)
 	end
 
 	private
