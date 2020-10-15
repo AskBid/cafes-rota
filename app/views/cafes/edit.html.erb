@@ -1,1 +1,39 @@
-<h1>Add url/images to <%= capitalize_each_word(@cafe.name) %></h1>
+<h1>Add url/images to <%= link_to capitalize_each_word(@cafe.name), cafe_path(@cafe.slug) %></h1>
+
+<%= form_for(@cafe, :url => cafe_path(@cafe.slug)) do |f| %>
+		<fieldset>
+		<legend>Openings</legend>
+		<%= f.fields_for :openings do |day| %>
+				<%= day.label day.object.day %>
+				<%= day.select(:status, [['open', 'open'], ['close', 'close']]) %>
+				<%= day.hidden_field :day %>
+				<br>
+		<% end %>
+	</fieldset>
+
+<br>
+
+	<fieldset>
+		<legend>URLs to this Cafe's related websites</legend>
+		<%= f.fields_for :links do |link| %>
+				<%= link.label link.object.name %>
+				<%= link.text_field :url %>
+				<%= link.hidden_field :name %>
+				<br>
+		<% end %>
+	</fieldset>
+
+<br>
+
+	<fieldset>
+		<legend>Images URLs</legend>
+		<%= f.fields_for :images do |img| %>
+				<%= img.label img.object.name %>
+				<%= img.text_field :url %>
+				<%= img.hidden_field :name %>
+		<% end %>
+	</fieldset>
+
+	<%= f.submit 'Edit' %>
+<% end %>
+
