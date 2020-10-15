@@ -5,7 +5,8 @@ class CafesController < ApplicationController
 
 	def new
 		@cafe = Cafe.new
-		# @cafe.populate_new_cafe
+		@cafe.populate_new_cafe
+		@cafe.populate_cafe_openings
 	end
 
 	def create

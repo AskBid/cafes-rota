@@ -14,7 +14,6 @@ class Cafe < ApplicationRecord
 	validate :cafe_has_image
 
 	before_save :downcase_name, :location_prep
-	after_initialize :populate_cafe_openings, :populate_new_cafe
 
 	accepts_nested_attributes_for :links, :images, :openings, reject_if: proc { |attributes| attributes[:url].blank? }, allow_destroy: true
 

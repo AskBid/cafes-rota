@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
 	belongs_to :cafe
 
-	validates :url, presence: { message: "%{attribute} must be given" }
+	validates :url, presence: { message: "image %{attribute} must be given" }
 end

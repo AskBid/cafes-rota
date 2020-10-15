@@ -1,5 +1,5 @@
 class Link < ApplicationRecord
 	belongs_to :cafe
 
-	validates :url, presence: { message: "%{attribute} must be givensdds" }
+	validates :url, presence: { message: " link %{attribute} must be given" }
 end
