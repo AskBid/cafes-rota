@@ -33,6 +33,10 @@ class CafesController < ApplicationController
 		render '/location'
 	end
 
+	def edit
+		@cafe = Cafe.find_by_slug(params[:slug])
+	end
+
 	private
 
 	def location_params

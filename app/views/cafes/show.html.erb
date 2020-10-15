@@ -1,8 +1,11 @@
 
 <div class='cafeshow'>
 	<div>
-		<h1 style="display:inline-block;"><%= capitalize_each_word(@cafe.name) %></h1>
 		
+		<h1 style="display:inline-block;"><%= capitalize_each_word(@cafe.name) %></h1>
+		<% if current_user %>
+			<%= link_to '(edit)', edit_cafe_path(@cafe.slug), class: 'normal_link' %>
+		<% end %>
 		<% if user_is_authenticated %>
 			<div style="display:inline-block;width:20px"></div>
 			<div style="display:inline-block;">
