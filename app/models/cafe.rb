@@ -11,6 +11,7 @@ class Cafe < ApplicationRecord
 
 	validates_uniqueness_of :name, {message: "%{value} name already exist"}
 	validates :name, presence: { message: "%{attribute} must be given" }
+	validate :cafe_has_image
 
 	before_save :downcase_name, :location_prep
 
@@ -53,6 +54,12 @@ class Cafe < ApplicationRecord
 
 		img_times.times do 
 			self.images.build(name: 'other')
+		end
+	end
+
+	def cafe_has_image
+		if self.images.size == 0
+			errors.add(:images, "#{self.name} must have atleast one image url")
 		end
 	end
 
